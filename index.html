@@ -14,10 +14,23 @@
             width: 100%;
             overflow: hidden;
             /* background: blue; */
+            /* background-image: url('main.jpg');
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url('main.jpg');
+            background-size: cover; */
+            font-family: HyliaSerifBeta-Regular;
+        }
+
+        .root-desktop {
             background-image: url('main.jpg');
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url('main.jpg');
             background-size: cover;
-            font-family: HyliaSerifBeta-Regular;
+            background-position: bottom center;
+        }
+
+        .root-mobile {
+            background-image: url('main-mobile.jpg');
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url('main-mobile.jpg');
+            background-size: cover;
         }
 
         /* @media all and (min-width: 600px) {
@@ -42,9 +55,8 @@
             }
         } */
 
-
-
         .animated {
+            animation-play-state: paused;
             -webkit-animation-duration: 5s;
             animation-duration: 5s;
             /* animation-delay: 2s; */
@@ -81,7 +93,7 @@
 </head>
 
 <body style="margin: 0">
-    <div class="root-container"
+    <div class="root-container" id="root"
         style="height: 100%; width: 100%; align-items: flex-start; display: flex; justify-content: flex-end;">
         <div id="animated-example" class="animated fadeIn" style="height: 90%; align-self: flex-end;">
             <div style="display: flex; flex-direction: row;">
@@ -102,14 +114,28 @@
         </div>
     </div>
     <script>
-        // startAnimation = () => {
-        //     // var img = do
-        //     window.document.getElementById('animated-example').style.animationPlayState = 'running';
-        // }
-        // window.onload = function () {
-        //     startAnimation();
-        //     console.log('running');
-        // }
+        startAnimation = (img) => {
+            const className = img === 'main.jpg' ? 'root-desktop' : 'root-mobile';
+            let image = new Image();
+            image.onload = () => {
+                window.document.getElementById('root').classList.add(className);
+
+                const anim = window.document.getElementById('animated-example').style
+                anim.animationDelay = '2s';
+                anim.animationPlayState = 'running';
+            }
+            image.src = img;
+        }
+        window.onload = function () {
+            // alert(window.innerWidth);
+            const width = window.innerWidth || document.documentElement.clientWidth ||
+                document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight ||
+                document.body.clientHeight;
+
+            const ratio = height / width;
+            startAnimation(ratio < 1.75 ? 'main.jpg' : 'main-mobile.jpg');
+        }
     </script>
 </body>
 
