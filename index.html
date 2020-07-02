@@ -1,83 +1,151 @@
 <html>
 
 <head>
-    <style>
-        @import url("fonts/font.css");
-
-        .body {
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            overflow-x: hidden;
-        }
-
-        .root-container {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            background-position: bottom center;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url('main.jpg');
-            background-size: cover;
-            font-family: HyliaSerifBeta-Regular;
-        }
-
-        .animated {
-            -webkit-animation-duration: 5s;
-            animation-duration: 5s;
-            animation-delay: 2s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-            color: white;
-        }
-
-        @-webkit-keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .fadeIn {
-            -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-        }
-    </style>
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body style="margin: 0">
-    <div class="root-container"
-        style="height: 100%; width: 100%; align-items: flex-start; display: flex; justify-content: flex-end;">
-        <div id="animated-example" class="animated fadeIn" style="height: 90%; align-self: flex-end;">
-            <div style="display: flex; flex-direction: row;">
-                <div style="font-size: 7rem; line-height: 76%;">R</div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; padding-right: 5px;">
-                    <div style="font-size: 1.5rem;">
+    <div class="root-container">
+        <div class="animated fadeIn">
+            <div class="landing-text-container">
+                <div style="font-size: 11vmin; line-height: 93%;">R</div>
+                <div class="column-text-container">
+                    <div style="font-size: 3vmin;">
                         welcome to
                     </div>
-                    <div style="font-size: 5rem; line-height: 50%;">
+                    <div style="font-size: 8.5vmin; line-height: 35%;">
                         ayyan's
                     </div>
-                    <div style="font-size: 2rem; line-height: 135%;">
-                        personal site
+                    <div style="font-size: 3.5vmin; line-height: 220%;">
+                        Personal Site
                     </div>
                 </div>
             </div>
-
+            <div class="bottom-half-container">
+                <div class="routes-container">
+                    <div class="icon-button-container">
+                        <img src="assets/icon.png" class="icon">
+                        <div class="route-button">
+                            Continue
+                        </div>
+                    </div>
+                    <div class="icon-button-container">
+                        <img src="assets/icon.png" class="icon">
+                        <div class="route-button">
+                            New Game
+                        </div>
+                    </div>
+                    <div class="icon-button-container">
+                        <img src="assets/icon.png" class="icon">
+                        <div class="route-button">
+                            Options
+                        </div>
+                    </div>
+                    <div class="icon-button-container">
+                        <img src="assets/icon.png" class="icon">
+                        <div class="route-button">
+                            amiibo
+                        </div>
+                    </div>
+                    <div class="icon-button-container">
+                        <img src="assets/icon.png" class="icon">
+                        <div class="route-button">
+                            DLC Purchased
+                        </div>
+                    </div>
+                </div>
+                <div class="credits-container">
+                    <div class="credit">
+                        Ver 0.0.1
+                    </div>
+                    <div class="credit">
+                        DLC Ver 0.0
+                    </div>
+                    <div class="credit">
+                        &#169; Rayyan Karim
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        window.onload = () => {
+            class IconManager {
+                constructor() {
+                    this.hoveredButton = null;
+                    this.buttons = Object.values(document.getElementsByClassName('icon-button-container'));
+                    const self = this;
+
+                    Object.values(this.buttons).map((button, index) => {
+                        button.addEventListener('mouseover', function (event) {
+                            self.setHoveredButton(index);
+                        })
+                        button.addEventListener('mouseout', function (event) {
+                            self.setHoveredButton(null);
+                        })
+                    })
+                }
+
+                incrementHoveredButton() {
+                    this.hideHover();
+                    this.hoveredButton === 4 || this.hoveredButton === null ? 
+                        this.hoveredButton = 0 : this.hoveredButton++;;
+                    this.displayHover();
+
+                }
+
+                decrementHoveredButton() {
+                    this.hideHover();
+                    this.hoveredButton === 0 || this.hoveredButton === null ? 
+                        this.hoveredButton = 4 : this.hoveredButton--;
+                    this.displayHover();
+                }
+
+                setHoveredButton(value) {
+                    this.hideHover();
+
+                    this.hoveredButton = value;
+                    this.displayHover();
+                }
+
+                displayHover() {
+                    if (this.hoveredButton !== null) {
+                        this.buttons[this.hoveredButton].children[0].classList.add('icon-visible');
+                    }
+                }
+
+                hideHover() {
+                    this.hoveredButton !== null && this.buttons[this.hoveredButton].children[0].classList.remove('icon-visible');
+                }
+            }
+            const manager = new IconManager();
+
+            // add event listeners for icon
+            // Object.values(buttons).map((button, index) => {
+            //     button.addEventListener('mouseover', function (event) {
+            //         button.children[0].classList.add('icon-visible');
+            //     })
+            //     button.addEventListener('mouseout', function (event) {
+            //         button.children[0].classList.remove('icon-visible');
+            //     })
+            // })
+
+            // const arrow = (e) => {
+            //     if (e.keycode == '38') 
+            // }
+
+            // add arrow key event listeners
+            const keyProcessor = (e) => {
+                if (e.keyCode === 38) {
+                    manager.decrementHoveredButton();
+                } else if (e.keyCode === 40) {
+                    manager.incrementHoveredButton();
+                }
+            }
+            document.onkeydown = keyProcessor;
+        }
+    </script>
 </body>
 
 </html>
