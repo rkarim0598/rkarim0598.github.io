@@ -8,14 +8,28 @@
 .root-container {
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    background-position: bottom center;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8)), url('../assets/main.jpg');
-    background-size: cover;
+    background-image: url('../assets/main-mobile.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8)), url('../assets/main-mobile.jpg');
     font-family: HyliaSerifBeta-Regular;
     align-items: flex-start;
     display: flex;
     justify-content: flex-end;
+    background-size: cover;
+}
+
+@media only screen and (min-width: 768px) {
+    .root-container {
+        background-image: url('../assets/main.jpg');
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8)), url('../assets/main.jpg');
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+@media all and (orientation: landscape) and (max-width: 900px) and (-webkit-min-device-pixel-ratio:0) {
+    .root-container {
+        background-position: 0% 0%;
+    }
 }
 
 .animated {

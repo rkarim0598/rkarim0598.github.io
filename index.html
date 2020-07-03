@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="fonts/font.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -89,7 +90,7 @@
 
                 incrementHoveredButton() {
                     this.hideHover();
-                    this.hoveredButton === 4 || this.hoveredButton === null ? 
+                    this.hoveredButton === 4 || this.hoveredButton === null ?
                         this.hoveredButton = 0 : this.hoveredButton++;;
                     this.displayHover();
 
@@ -97,7 +98,7 @@
 
                 decrementHoveredButton() {
                     this.hideHover();
-                    this.hoveredButton === 0 || this.hoveredButton === null ? 
+                    this.hoveredButton === 0 || this.hoveredButton === null ?
                         this.hoveredButton = 4 : this.hoveredButton--;
                     this.displayHover();
                 }
