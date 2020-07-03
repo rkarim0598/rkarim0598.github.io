@@ -26,34 +26,34 @@
             <div class="bottom-half-container">
                 <div class="routes-container">
                     <div class="icon-button-container">
-                        <img src="assets/icon.png" class="icon">
-                        <div class="route-button">
+                        <img src="assets/icon.png" class="icon shift">
+                        <button class="route-button">
                             Continue
-                        </div>
+                        </button>
                     </div>
                     <div class="icon-button-container">
-                        <img src="assets/icon.png" class="icon">
-                        <div class="route-button">
+                        <img src="assets/icon.png" class="icon shift">
+                        <button class="route-button">
                             New Game
-                        </div>
+                        </button>
                     </div>
                     <div class="icon-button-container">
-                        <img src="assets/icon.png" class="icon">
-                        <div class="route-button">
+                        <img src="assets/icon.png" class="icon shift">
+                        <button class="route-button">
                             Options
-                        </div>
+                        </button>
                     </div>
                     <div class="icon-button-container">
-                        <img src="assets/icon.png" class="icon">
-                        <div class="route-button">
+                        <img src="assets/icon.png" class="icon shift">
+                        <button class="route-button">
                             amiibo
-                        </div>
+                        </button>
                     </div>
                     <div class="icon-button-container">
-                        <img src="assets/icon.png" class="icon">
-                        <div class="route-button">
-                            DLC Purchased
-                        </div>
+                        <img src="assets/icon.png" class="icon shift" onclick="">
+                        <button class="route-button" onclick="window.open('https:\/\/github.com/rkarim0598/rkarim0598.github.io');">
+                            View Source
+                        </button>
                     </div>
                 </div>
                 <div class="credits-container">
@@ -119,22 +119,12 @@
                 hideHover() {
                     this.hoveredButton !== null && this.buttons[this.hoveredButton].children[0].classList.remove('icon-visible');
                 }
+
+                handleEnterPress() {
+                    this.hoveredButton !== null && this.buttons[this.hoveredButton].children[1].onclick !== null && this.buttons[this.hoveredButton].children[1].onclick();
+                }
             }
             const manager = new IconManager();
-
-            // add event listeners for icon
-            // Object.values(buttons).map((button, index) => {
-            //     button.addEventListener('mouseover', function (event) {
-            //         button.children[0].classList.add('icon-visible');
-            //     })
-            //     button.addEventListener('mouseout', function (event) {
-            //         button.children[0].classList.remove('icon-visible');
-            //     })
-            // })
-
-            // const arrow = (e) => {
-            //     if (e.keycode == '38') 
-            // }
 
             // add arrow key event listeners
             const keyProcessor = (e) => {
@@ -142,6 +132,8 @@
                     manager.decrementHoveredButton();
                 } else if (e.keyCode === 40) {
                     manager.incrementHoveredButton();
+                } else if (e.keyCode === 13) {
+                    manager.handleEnterPress();
                 }
             }
             document.onkeydown = keyProcessor;

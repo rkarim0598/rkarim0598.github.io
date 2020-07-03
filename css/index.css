@@ -72,6 +72,35 @@
     animation-name: fadeIn;
 }
 
+@-webkit-keyframes shift {
+    0% {
+        padding-right: 10px;
+    }
+    60% {
+        padding-right: 13px;
+    }
+    100% {
+        padding-right: 10px;
+    }
+}
+
+@keyframes shift {
+    0% {
+        padding-right: 10px;
+    }
+    60% {
+        padding-right: 13px;
+    }
+    100% {
+        padding-right: 10px;
+    }
+}
+
+.shift {
+    -webkit-animation-name: shift;
+    animation-name: shift;
+}
+
 .landing-text-container {
     display: flex;
     flex-direction: row;
@@ -102,7 +131,22 @@
     font-size: 2.5vmin;
     font-family: sans-serif, serif;
     font-style: italic;
-    align-self: flex-end;
+    color: white;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.route-button:hover {
+    cursor: pointer;
+}
+
+.route-button:focus {
+    outline: none;
+}
+
+.route-button::-moz-focus-inner {
+    border: 0;
 }
 
 .credits-container {
@@ -130,11 +174,17 @@
 
 .icon {
     display: none;
-    height: 2vmin;
-    width: 6vmin;
+    height: 1.5vmin;
+    width: 4.5vmin;
     padding-right: 10px;
 }
 
 .icon-visible {
     display: flex;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    color: white;
+    animation-iteration-count:infinite;
 }
