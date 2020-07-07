@@ -17,14 +17,14 @@ export default `
         <div class="routes-container">
             <div class="icon-button-container">
                 <img src="assets/icon.png" class="icon shift">
-                <button class="route-button" onclick="window.store.router.setCurrentScreen('continue')">
-                    Continue
+                <button class="route-button" onclick="window.store.router.setCurrentScreen('experience')">
+                    Experience
                 </button>
             </div>
             <div class="icon-button-container">
                 <img src="assets/icon.png" class="icon shift">
                 <button class="route-button">
-                    New Game
+                    Skills
                 </button>
             </div>
             <div class="icon-button-container">

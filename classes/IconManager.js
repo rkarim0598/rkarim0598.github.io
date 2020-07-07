@@ -17,21 +17,24 @@ export default class IconManager {
     }
 
     incrementHoveredButton() {
+        if (this.hoveredButton === null) return;
         this.hideHover();
-        this.hoveredButton === 4 || this.hoveredButton === null ?
+        this.hoveredButton === 4 ?
             this.hoveredButton = 0 : this.hoveredButton++;;
         this.displayHover();
 
     }
 
     decrementHoveredButton() {
+        if (this.hoveredButton === null) return;
         this.hideHover();
-        this.hoveredButton === 0 || this.hoveredButton === null ?
+        this.hoveredButton === 0  ?
             this.hoveredButton = 4 : this.hoveredButton--;
         this.displayHover();
     }
 
     setHoveredButton(value) {
+        if (this.hoveredButton === null) return;
         this.hideHover();
 
         this.hoveredButton = value;
@@ -45,10 +48,12 @@ export default class IconManager {
     }
 
     hideHover() {
+        if (this.hoveredButton === null) return;
         this.hoveredButton !== null && this.buttons[this.hoveredButton].children[0].classList.remove('icon-visible');
     }
 
     handleEnterPress() {
+        if (this.hoveredButton === null) return;
         this.hoveredButton !== null && this.buttons[this.hoveredButton].children[1].onclick !== null && this.buttons[this.hoveredButton].children[1].onclick();
     }
 }
