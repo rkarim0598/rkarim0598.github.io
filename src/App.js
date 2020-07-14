@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef } from 'react';
+import useKeyDown from './hooks/useKeyDown';
+import Home from './Components/Home';
 
 function App() {
+  const [currentScreen, setCurrentScreen] = useState('home');
+  const keyPressed = useKeyDown();
+  const rootRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="root-container" ref={rootRef}>
+      <Home
+        currentScreen={currentScreen}
+        setCurrentScreen={setCurrentScreen}
+        keyPressed={keyPressed}
+      />
+      <div
+        id="experience"
+        className="hide screen"
+        style={{
+          position: 'absolute',
+          zIndex: '50000',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          top: '50%'
+        }}></div>
     </div>
   );
 }
