@@ -17,10 +17,16 @@
     justify-content: flex-end;
 }
 
+.blur {
+    filter: blur(4px);
+    background-image: url('./assets/main-mobile.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./assets/main-mobile.jpg');
+}
+
 .root-container {
     height: 100%;
     width: 100%;
-    font-family: HyliaSerifBeta-Regular;
+    font-family: Calamity-Regular;
 }
 
 .experience-container {
@@ -39,6 +45,10 @@
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8)), url('./assets/main.jpg');
         background-position: center center;
         background-size: cover;
+    }
+    .blur {
+        background-image: url('./assets/main.jpg');
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./assets/main.jpg');
     }
 }
 
@@ -120,6 +130,7 @@
 .landing-text-container {
     display: flex;
     flex-direction: row;
+    font-family: HyliaSerifBeta-Regular;
 }
 
 .column-text-container {
@@ -140,14 +151,14 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-evenly;
-    height: 50%;
+    height: 55%;
 }
 
 .route-button {
-    font-size: 2.5vmin;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(15px, 2.5vmin, 2.5vmin);
     font-style: italic;
-    color: white;
+    font-weight: 600;
+    color: #fffb;
     border: none;
     background: transparent;
     padding: 0;
@@ -175,7 +186,7 @@
 
 .credit {
     font-size: 2vmin;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Calamity-Regular, Arial, Helvetica, sans-serif;
     font-style: italic;
 }
 
@@ -207,10 +218,6 @@
 
 .hide {
     display: none;
-}
-
-.blur {
-    filter: blur(2px);
 }
 
 #experience {

@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
-import Buttons from './Buttons';
+import React from 'react';
+import Buttons from '../Components/Buttons';
 import '../app.css';
 
 export default function Home(props) {
-    const imageRef = useRef(null);
-
     return (
-        <div className="image-container" ref={imageRef}>
+        <div
+            className={`image-container ${props.currentScreen !== 'home' && 'blur'}`}
+        >
             <div id="welcome" className="animated fadeIn screen">
                 <div className="landing-text-container">
                     <div style={{ fontSize: '11vmin', lineHeight: '93%' }}>R</div>
@@ -25,7 +25,6 @@ export default function Home(props) {
                 <div className="bottom-half-container">
                     <Buttons
                         setCurrentScreen={props.setCurrentScreen}
-                        keyPressed={props.keyPressed}
                         currentScreen={props.currentScreen}
                     />
                     <div className="credits-container">

@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 
-export default function useKeyDown() {
+export default function useKeyDown(keyList = []) {
     const [keyPressed, setKeyPressed] = useState(null);
 
     function downHandler(e) {
-        setKeyPressed(e.keyCode);
+        keyList.includes(e.keyCode) && setKeyPressed(e.keyCode);
     }
 
     function upHandler(e) {
         setKeyPressed(null);
     }
-    
+
     useEffect(() => {
         document.addEventListener('keydown', downHandler);
         document.addEventListener('keyup', upHandler);
@@ -19,6 +19,7 @@ export default function useKeyDown() {
             document.removeEventListener('keydown', downHandler);
             document.removeEventListener('keydown', upHandler);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return keyPressed;

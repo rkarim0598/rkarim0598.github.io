@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
+import useKeyDown from '../hooks/useKeyDown';
 import floater from '../assets/icon.png';
 
 export default function Buttons(props) {
     const [hoveredButton, setHoveredButton] = useState(0);
+    const keyPressed = useKeyDown([38, 40, 13]);
     const routesRef = useRef(null);
     const buttons = [
         {
@@ -44,33 +46,36 @@ export default function Buttons(props) {
 
     useEffect(() => {
         if (props.currentScreen === 'home') {
-            if (props.keyPressed === 38) {
+            if (keyPressed === 38) {
                 decrementHoveredButton();
-            } else if (props.keyPressed === 40) {
+            } else if (keyPressed === 40) {
                 incrementHoveredButton();
-            } else if (props.keyPressed === 13) {
+            } else if (keyPressed === 13) {
                 handleEnterPress();
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.keyPressed, props.currentScreen])
+    }, [keyPressed, props.currentScreen])
 
     return (
         <div className="routes-container" ref={routesRef}>
-            {buttons.map((button, index) =>
-                <div
-                    className="icon-button-container"
-                    key={button.text}
-                    onMouseOver={() => setHoveredButton(index)}
-                    onMouseOut={() => { console.log('doing null'); setHoveredButton(null) }}
-                >
-                    <img src={floater} className={`icon shift ${hoveredButton === index && 'icon-visible'}`} alt="" />
-                    <button className="route-button"
-                        onClick={button.onClick}>
-                        {button.text}
-                    </button>
-                </div>
-            )}
+            {props.currentScreen === 'home' &&
+                buttons.map((button, index) =>
+                    <div
+                        className="icon-button-container"
+                        key={button.text}
+                        onMouseOver={() => setHoveredButton(index)}
+                        onMouseOut={() => setHoveredButton(null)}
+                    >
+                        <img src={floater} className={`icon shift ${hoveredButton === index && 'icon-visible'}`} alt="" />
+                        <button className="route-button"
+                            style={hoveredButton === index ? { color: 'white' } : {}}
+                            onClick={button.onClick}>
+                            {button.text}
+                        </button>
+                    </div>
+                )
+            }
         </div>
     )
 }

@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
-import useKeyDown from './hooks/useKeyDown';
-import Home from './Components/Home';
+import Home from './Views/Home';
+import Experience from './Views/Experience';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('home');
-  const keyPressed = useKeyDown();
+  const [currentScreen, setCurrentScreen] = useState('experience');
   const rootRef = useRef(null);
 
   return (
@@ -12,18 +11,13 @@ function App() {
       <Home
         currentScreen={currentScreen}
         setCurrentScreen={setCurrentScreen}
-        keyPressed={keyPressed}
       />
-      <div
-        id="experience"
-        className="hide screen"
-        style={{
-          position: 'absolute',
-          zIndex: '50000',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          top: '50%'
-        }}></div>
+      {currentScreen === 'experience' ?
+        <Experience 
+          setCurrentScreen={setCurrentScreen}
+        /> :
+        <></>
+      }
     </div>
   );
 }
