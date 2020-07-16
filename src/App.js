@@ -3,7 +3,7 @@ import Home from './Views/Home';
 import Experience from './Views/Experience';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('experience');
+  const [currentScreen, setCurrentScreen] = useState('home');
   const rootRef = useRef(null);
 
   return (

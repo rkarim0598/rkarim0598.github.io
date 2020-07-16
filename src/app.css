@@ -223,3 +223,225 @@
 #experience {
     z-index: 100;
 }
+
+.shape {
+    align-self: flex-end;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.top {
+    height: 0;
+    border-width: 0 0 3vmin 1.5vmin;
+    border-style: solid;
+    border-color: transparent #25282b #25282b transparent;
+}
+
+.bottom {
+    height: '80%';
+    background-color: #25282b;
+}
+
+.hovered-experience {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: black;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 10%;
+    min-height: 100px;
+    max-width: 475px;
+    border-style: solid;
+    border-width: 0.5vmin;
+    border-color: black;
+}
+
+.hovered-experience:hover {
+    border-color: white;
+}
+
+.animated-triangle {
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+#top-left {
+    left: -0.5vmin;
+    top: -0.5vmin;
+    border-top: 2vmin solid white;
+    border-right: 2vmin solid transparent;
+}
+
+#top-right {
+    left: calc(100% - 2vmin);
+    top: -.5vmin;
+    border-top: 2vmin solid white;
+    border-left: 2vmin solid transparent;
+}
+
+#bottom-left {
+    left: -0.5vmin;
+    top: calc(100% - 1.5vmin);
+    border-bottom: 2vmin solid white;
+    border-right: 2vmin solid transparent;
+}
+
+#bottom-right {
+    left: calc(100% - 1.5vmin);
+    top: calc(100% - 1.5vmin);
+    border-bottom: 2vmin solid white;
+    border-left: 2vmin solid transparent;
+}
+
+.hovered-experience:hover #top-left, .hovered-experience:hover #top-right, .hovered-experience:hover #bottom-left, .hovered-experience:hover #bottom-right {
+    display: unset;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+.upLeft {
+    -webkit-animation-name: upLeft;
+    animation-name: upLeft;
+}
+
+.upRight {
+    -webkit-animation-name: upRight;
+    animation-name: upRight;
+}
+
+.downLeft {
+    -webkit-animation-name: downLeft;
+    animation-name: downLeft;
+}
+
+.downRight {
+    -webkit-animation-name: downRight;
+    animation-name: downRight;
+}
+
+@-webkit-keyframes upLeft {
+    0% {
+        left: -0.5vmin;
+        top: -0.5vmin;
+    }
+    50% {
+        left: -1vmin;
+        top: -1vmin;
+    }
+    100% {
+        left: -0.5vmin;
+        top: -0.5vmin;
+    }
+}
+
+@keyframes upLeft {
+    0% {
+        left: -0.5vmin;
+        top: -0.5vmin;
+    }
+    50% {
+        left: -1vmin;
+        top: -1vmin;
+    }
+    100% {
+        left: -0.5vmin;
+        top: -0.5vmin;
+    }
+}
+
+@-webkit-keyframes upRight {
+    0% {
+        left: calc(100% - 1.5vmin);
+        top: -.5vmin;
+    }
+    50% {
+        left: calc(100% - 1vmin);
+        top: -1vmin;
+    }
+    100% {
+        left: calc(100% - 1.5vmin);
+        top: -.5vmin;
+    }
+}
+
+@keyframes upRight {
+    0% {
+        left: calc(100% - 1.5vmin);
+        top: -.5vmin;
+    }
+    50% {
+        left: calc(100% - 1vmin);
+        top: -1vmin;
+    }
+    100% {
+        left: calc(100% - 1.5vmin);
+        top: -.5vmin;
+    }
+}
+
+@-webkit-keyframes downLeft {
+    0% {
+        left: -0.5vmin;
+        top: calc(100% - 1.5vmin);
+    }
+    50% {
+        left: -1vmin;
+        top: calc(100% - 1vmin);
+    }
+    100% {
+        left: -0.5vmin;
+        top: calc(100% - 1.5vmin);
+    }
+}
+
+@keyframes downLeft {
+    0% {
+        left: -0.5vmin;
+        top: calc(100% - 1.5vmin);
+    }
+    50% {
+        left: -1vmin;
+        top: calc(100% - 1vmin);
+    }
+    100% {
+        left: -0.5vmin;
+        top: calc(100% - 1.5vmin);
+    }
+}
+
+@-webkit-keyframes downRight {
+    0% {
+        left: calc(100% - 1.5vmin);
+        top: calc(100% - 1.5vmin);
+    }
+    50% {
+        left: calc(100% - 1vmin);
+        top: calc(100% - 1vmin);
+    }
+    100% {
+        left: calc(100% - 1.5vmin);
+        top: calc(100% - 1.5vmin);
+    }
+}
+
+@keyframes downRight {
+    0% {
+        left: calc(100% - 1.5vmin);
+        top: calc(100% - 1.5vmin);
+    }
+    50% {
+        left: calc(100% - 1vmin);
+        top: calc(100% - 1vmin);
+    }
+    100% {
+        left: calc(100% - 1.5vmin);
+        top: calc(100% - 1.5vmin);
+    }
+}
