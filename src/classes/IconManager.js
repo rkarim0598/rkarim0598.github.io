@@ -1,10 +1,12 @@
 export default class IconManager {
-    constructor() {
+    constructor(props) {
+        console.log(props);
         this.hoveredButton = 0;
-        this.buttons = Object.values(document.getElementsByClassName('icon-button-container'));
+        this.buttons = Object.values(props.buttons.children);
+        this.onClicks = props.onClicks;
         const self = this;
-
-        Object.values(this.buttons).map((button, index) => {
+        
+        Object.values(this.buttons).forEach((button, index) => {
             button.addEventListener('mouseover', function (event) {
                 self.setHoveredButton(index);
             })
@@ -17,26 +19,15 @@ export default class IconManager {
     }
 
     incrementHoveredButton() {
-        if (this.hoveredButton === null) return;
-        this.hideHover();
-        this.hoveredButton === 4 ?
-            this.hoveredButton = 0 : this.hoveredButton++;;
-        this.displayHover();
-
+        this.setHoveredButton(this.hoveredButton === 4 || this.hoveredButton === null ? 0 : this.hoveredButton + 1);
     }
 
     decrementHoveredButton() {
-        if (this.hoveredButton === null) return;
-        this.hideHover();
-        this.hoveredButton === 0  ?
-            this.hoveredButton = 4 : this.hoveredButton--;
-        this.displayHover();
+        this.setHoveredButton(this.hoveredButton === 0 || this.hoveredButton === null ? 4 : this.hoveredButton - 1);
     }
 
     setHoveredButton(value) {
-        if (this.hoveredButton === null) return;
         this.hideHover();
-
         this.hoveredButton = value;
         this.displayHover();
     }
@@ -54,6 +45,6 @@ export default class IconManager {
 
     handleEnterPress() {
         if (this.hoveredButton === null) return;
-        this.hoveredButton !== null && this.buttons[this.hoveredButton].children[1].onclick !== null && this.buttons[this.hoveredButton].children[1].onclick();
+        this.hoveredButton !== null && this.onClicks[this.hoveredButton].onClick();
     }
 }
