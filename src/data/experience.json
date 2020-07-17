@@ -3,7 +3,7 @@
         "title": "Lead Mobile Dev",
         "company": "Eventurely - U. Notre Dame",
         "location": "Notre Dame, IN",
-        "date": "03/01/2018 - 07/10/2020",
+        "date": "March 2018 - July 2020",
         "info": [
             "Led student team using React Native in conjuction with Expo and Firebase to create a cross-platform mobile app enabling students to discover on-campus events and groups with ease"
         ],
@@ -14,43 +14,45 @@
         "title": "SWE Intern",
         "company": "MoreSteam.com",
         "location": "Powell, OH",
-        "date": "05/20/2019 - 08/01/2020",
+        "date": "May - July 2019",
         "description": [
             "Assisted in development and design of front-end dashboard view using VueJS, HTML, and CSS to allow clients to easily monitor and visualize students' progress in courses"
         ],
-        "image": "eventurely.jpg"
+        "image": "moresteam-white.png",
+        "backgroundColor": "#06204B"
     },
     {
         "title": "SWE Intern",
         "company": "Conventus Lending",
         "location": "San Francisco, CA",
-        "date": "01/20/2019 - 05/01/2019",
+        "date": "January - May 2019",
         "description": [
             "Used ReactJS to create isolated components",
             "Utilized Webpack to customize build for website",
             "Implemented a POC push notification system using Node.js and Push API"
         ],
-        "image": "eventurely.jpg"
+        "image": "conventus-logo.png",
+        "backgroundColor": "#265D5B"
     },
     {
         "title": "Xtern Bootcamp",
         "company": "TechPoint",
         "location": "Indianapolis, IN",
-        "date": "05/20/2018 - 06/17/2018",
+        "date": "May - June 2018",
         "description": [
             "Completed 3-week intensive course focused on developing skills needed for technology industry",
             "Gained experience using vanilla JS, ReactJS, and Firebase"
         ],
-        "image": "eventurely.jpg"
+        "image": "techpoint.jpeg"
     },
     {
         "title": "Teaching Assistant",
         "company": "U. Notre Dame",
         "location": "Notre Dame, IN",
-        "date": "01/15/2018 - 05/10/2018",
+        "date": "January 2018 - May 2018",
         "description": [
             "Assisted students in using Verilog and Altera DE2 boards for Logic Design course"
         ],
-        "image": "eventurely.jpg"
+        "image": "nd.jpg"
     }
 ]
