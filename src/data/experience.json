@@ -1,11 +1,11 @@
 [
     {
         "title": "Lead Mobile Dev",
-        "company": "Eventurely - U. Notre Dame",
+        "company": "Eventurely",
         "location": "Notre Dame, IN",
-        "date": "March 2018 - July 2020",
-        "info": [
-            "Led student team using React Native in conjuction with Expo and Firebase to create a cross-platform mobile app enabling students to discover on-campus events and groups with ease"
+        "date": "Mar '18 - Jul '20",
+        "description": [
+            "Led development of React Native cross-platform mobile app easing discovery of on-campus student groups and events"
         ],
         "image": "eventurely.jpg",
         "current": true
@@ -14,21 +14,20 @@
         "title": "SWE Intern",
         "company": "MoreSteam.com",
         "location": "Powell, OH",
-        "date": "May - July 2019",
+        "date": "May - Jul '19",
         "description": [
-            "Assisted in development and design of front-end dashboard view using VueJS, HTML, and CSS to allow clients to easily monitor and visualize students' progress in courses"
+            "Assisted in development and design of front-end dashboard view using VueJS to allow clients to easily monitor and visualize students' progress in courses"
         ],
         "image": "moresteam-white.png",
         "backgroundColor": "#06204B"
     },
     {
         "title": "SWE Intern",
-        "company": "Conventus Lending",
+        "company": "Conventus",
         "location": "San Francisco, CA",
-        "date": "January - May 2019",
+        "date": "Jan - May '19",
         "description": [
             "Used ReactJS to create isolated components",
-            "Utilized Webpack to customize build for website",
             "Implemented a POC push notification system using Node.js and Push API"
         ],
         "image": "conventus-logo.png",
@@ -38,10 +37,9 @@
         "title": "Xtern Bootcamp",
         "company": "TechPoint",
         "location": "Indianapolis, IN",
-        "date": "May - June 2018",
+        "date": "May - Jun '18",
         "description": [
-            "Completed 3-week intensive course focused on developing skills needed for technology industry",
-            "Gained experience using vanilla JS, ReactJS, and Firebase"
+            "Completed 3-week intensive course focused on developing proficiency with JavaScript, ReactJS, Firebase, and skills needed for tech industry"
         ],
         "image": "techpoint.jpeg"
     },
@@ -49,7 +47,7 @@
         "title": "Teaching Assistant",
         "company": "U. Notre Dame",
         "location": "Notre Dame, IN",
-        "date": "January 2018 - May 2018",
+        "date": "Jan - May '18",
         "description": [
             "Assisted students in using Verilog and Altera DE2 boards for Logic Design course"
         ],

@@ -29,14 +29,26 @@
     font-family: Calamity-Regular;
 }
 
-.experience-container {
-    display: flex;
-}
-
 .welcome-container {
     align-items: flex-start;
     display: flex;
     justify-content: flex-end;
+}
+
+@media only screen and (min-width: 480px) {
+    .experiences-container::-webkit-scrollbar {
+        width: 10px;
+    }
+    .experiences-container::-webkit-scrollbar-track {
+        background: transparent;
+        /* color of the tracking area */
+    }
+    .experiences-container::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        /* color of the scroll thumb */
+        border-radius: 10px;
+        /* creates padding around scroll thumb */
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -232,13 +244,14 @@
 
 .top {
     height: 0;
-    border-width: 0 0 3vmin 1.5vmin;
+    border-width: 0 0 20px 1.5vmin;
     border-style: solid;
     border-color: transparent #25282b #25282b transparent;
 }
 
 .bottom {
     height: '80%';
+    max-height: '20px';
     background-color: #25282b;
 }
 
@@ -249,10 +262,10 @@
     background-color: black;
     flex-direction: row;
     margin-bottom: 10px;
-    width: 80%;
+    width: 95%;
     height: 10%;
     min-height: 100px;
-    max-width: 475px;
+    max-width: 500px;
     border-style: solid;
     border-width: 0.5vmin;
     border-color: black;
