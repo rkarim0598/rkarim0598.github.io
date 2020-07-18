@@ -19,7 +19,7 @@
 
 .my-experience-label {
     height: 5%;
-    font-size: clamp(20px, 3vmin, 25px);
+    font-size: calc(20px + 0.25vw);
     font-weight: bold;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .experience-back-button {
-    font-size: clamp(18px, 2.5vmin, 20px);
+    font-size: calc(20px + .25vw);
     padding: 0;
     background-color: transparent;
     margin: 0;

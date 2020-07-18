@@ -43,7 +43,8 @@ code {
   height: 80%;
   width: 85%;
   min-width: 300px;
-  min-height: 400px;
+  min-height: 300px;
+  max-width: 500px;
   color: white;
   align-items: center;
   justify-content: space-evenly;

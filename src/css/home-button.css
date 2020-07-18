@@ -1,5 +1,5 @@
 .route-button {
-    font-size: clamp(15px, 2.5vmin, 2.5vmin);
+    font-size: calc(15px + 0.25vw);
     font-style: italic;
     font-weight: 600;
     color: #fffb;

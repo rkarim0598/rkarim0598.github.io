@@ -46,6 +46,7 @@ export default function Home(props) {
             alt: "LinkedIn logo"
         },
         {
+            type: 'svg',
             url: "#",
             image: mail,
             alt: "Mail logo",
@@ -88,18 +89,19 @@ export default function Home(props) {
                 </div>
                 <div style={{ position: 'absolute', left: 0, bottom: '50px', display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
                     {links.map((link, index) =>
-                        <a
-                            key={index}
-                            href={link.url}
-                            style={{ paddingRight: '10vmin', paddingLeft: '10vmin' }}
-                            onClick={() => link.onClick && link.onClick()}
-                        >
-                            <img
-                                src={link.image}
-                                style={{ height: 'clamp(30px, 9vmin, 45px' }}
-                                alt={link.alt}
-                            />
-                        </a>
+                        <div style={{ paddingRight: '10vmin', paddingLeft: '10vmin' }}>
+                            <a
+                                key={index}
+                                href={link.url}
+                                onClick={() => link.onClick && link.onClick()}
+                            >
+                                <img
+                                    src={link.image}
+                                    style={{ width: 'calc(30px + 5vw)' }}
+                                    alt={link.alt}
+                                />
+                            </a>
+                        </div>
                     )}
                 </div>
             </div>

@@ -123,12 +123,6 @@
     height: 20%;
 }
 
-.credit {
-    font-size: 2vmin;
-    font-family: Calamity-Regular, Arial, Helvetica, sans-serif;
-    font-style: italic;
-}
-
 .hide {
     display: none;
 }

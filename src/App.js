@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Home from './Views/Home';
 import Experience from './Views/Experience';
 import Contact from './Views/Contact';

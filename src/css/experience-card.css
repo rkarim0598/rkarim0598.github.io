@@ -7,7 +7,7 @@
     margin-bottom: 10px;
     width: 95%;
     height: 10%;
-    min-height: 100px;
+    min-height: 15vmax;
     max-width: 500px;
     border-style: solid;
     border-width: 0.5vmin;
@@ -217,7 +217,8 @@
     flex-direction: column;
     flex: 1;
     height: 100%;
-    justify-content: space-between
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
 }
 
 .experience-card-company-date-container {
@@ -225,7 +226,7 @@
     flex-direction: row;
     justify-content: space-between;
     line-height: 115%;
-    font-size: clamp(13px, 2.5vmin, 16px);
+    font-size: calc(13px + 0.25vw);
 }
 
 .experience-card-top-text-container {
@@ -234,23 +235,17 @@
     height: 75%;
 }
 
-.experience-card-company {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .experience-card-title {
     line-height: 100%;
     font-family: Calamity-Bold;
-    font-size: clamp(13px, 2.5vmin, 16px);
+    font-size: calc(13px + 0.25vw);
 }
 
 .experience-card-description-list {
     margin: 0;
     padding-left: 2.5vmin;
     color: #cccccc;
-    font-size: clamp(12px, 2.5vmin, 14px);
+    font-size: calc(12px + 0.25vw);
 }
 
 .experience-card-description-element {

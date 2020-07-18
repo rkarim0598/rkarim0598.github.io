@@ -5,7 +5,7 @@ export default function Contact(props) {
     return (
         <div id="contact" className="screen">
             <form className="contact-form" action="https://usebasin.com/f/b05ad7051801" method="POST">
-                <span style={{ textAlign: 'left' }}>
+                <span className="contact-instr" style={{ textAlign: 'left' }}>
                     I'd prefer if you contacted me through&nbsp;
                     <a href="https://www.linkedin.com/in/rayyan-k-16a63b106/"><span style={{ fontWeight: 'bold', color: 'white', textDecoration: 'underline' }}>LinkedIn</span></a>.
                     If you'd like to contact me some other way, just fill out this form.
@@ -28,9 +28,9 @@ export default function Contact(props) {
                     name="message" 
                     placeholder="Enter message here..." 
                 />
-                <button className="plain-button" type="submit">Submit</button>
+                <button className="plain-button form-button" type="submit">Submit</button>
             </form>
-            <button onClick={props.goBack} className="plain-button corner-back-button">{"Back >"}</button>
+            <button onClick={props.goBack} className="plain-button corner-back-button form-button">{"Back >"}</button>
         </div>
     )
 }
