@@ -1,22 +1,33 @@
 import React, { useState, useRef } from 'react';
 import Home from './Views/Home';
 import Experience from './Views/Experience';
+import Contact from './Views/Contact';
+import jingled from './assets/jingled.jpg';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('home');
-  const rootRef = useRef(null);
 
   return (
-    <div className="root-container" ref={rootRef}>
+    <div className="root-container">
       <Home
         currentScreen={currentScreen}
         setCurrentScreen={setCurrentScreen}
       />
       {currentScreen === 'experience' ?
-        <Experience 
+        <Experience
           setCurrentScreen={setCurrentScreen}
         /> :
-        <></>
+        currentScreen === 'contact' ?
+          <Contact goBack={() => setCurrentScreen('home')} /> :
+          currentScreen === 'play' ?
+            <div id="play" className="screen">
+              <div style={{ height: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={jingled} style={{ width: '100%' }} alt="You just got JINGLED" />
+              </div>
+              <button onClick={() => setCurrentScreen('home')} className="plain-button corner-back-button">{'Back >'}</button>
+            </div> :
+            <></>
+
       }
     </div>
   );

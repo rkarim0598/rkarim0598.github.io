@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import HomeButton from '../Components/HomeButton';
 import '../css/home.css';
+import git from '../assets/git.png';
+import linkedin from '../assets/LI-In-Bug.png'
+import mail from '../assets/mail.svg';
 
 export default function Home(props) {
     const [hoveredButton, setHoveredButton] = useState(0);
@@ -12,22 +15,43 @@ export default function Home(props) {
             }
         },
         {
+            text: 'Play Game',
+            onClick: () => {
+                props.setCurrentScreen('play');
+            }
+        },
+        {
             text: 'Skills',
             onClick: () => console.log('skillz')
         },
         {
-            text: 'Options',
+            text: 'Coming Soon',
             onClick: () => console.log('options')
-        },
-        {
-            text: 'amiibo',
-            onClick: () => console.log('amiibo')
         },
         {
             text: 'View Source',
             onClick: () => window.open('https://github.com/rkarim0598/rkarim0598.github.io')
         }
     ];
+
+    const links = [
+        {
+            url: "https://github.com/rkarim0598",
+            image: git,
+            alt: "Git logo"
+        },
+        {
+            url: "https://www.linkedin.com/in/rayyan-k-16a63b106/",
+            image: linkedin,
+            alt: "LinkedIn logo"
+        },
+        {
+            url: "#",
+            image: mail,
+            alt: "Mail logo",
+            onClick: () => props.setCurrentScreen('contact')
+        }
+    ]
 
     return (
         <div
@@ -52,26 +76,31 @@ export default function Home(props) {
                     <div className="routes-container">
                         {props.currentScreen === 'home' &&
                             buttons.map((button, index) =>
-                                <HomeButton 
-                                    key={button.text} 
-                                    button={button} 
-                                    onHover={() => setHoveredButton(index)} 
+                                <HomeButton
+                                    key={button.text}
+                                    button={button}
+                                    onHover={() => setHoveredButton(index)}
                                     hovered={hoveredButton === index}
                                 />
                             )
                         }
                     </div>
-                    <div className="credits-container">
-                        <div className="credit">
-                            Ver 0.0.1
-                        </div>
-                        <div className="credit">
-                            DLC Ver 0.0
-                        </div>
-                        <div className="credit">
-                            &#169; Rayyan Karim
-                        </div>
-                    </div>
+                </div>
+                <div style={{ position: 'absolute', left: 0, bottom: '50px', display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
+                    {links.map((link, index) =>
+                        <a
+                            key={index}
+                            href={link.url}
+                            style={{ paddingRight: '10vmin', paddingLeft: '10vmin' }}
+                            onClick={() => link.onClick && link.onClick()}
+                        >
+                            <img
+                                src={link.image}
+                                style={{ height: 'clamp(30px, 9vmin, 45px' }}
+                                alt={link.alt}
+                            />
+                        </a>
+                    )}
                 </div>
             </div>
         </div>

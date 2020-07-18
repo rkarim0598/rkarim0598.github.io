@@ -1,7 +1,6 @@
 import React from 'react';
 import ExperienceCard from '../Components/ExperienceCard';
 import experience from '../data/experience.json';
-import floater from '../assets/icon.png';
 import '../css/experience.css';
 
 export default function Experience(props) {
