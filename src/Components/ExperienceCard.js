@@ -11,7 +11,7 @@ export default function (props) {
             <div id="bottom-left" className="animated-triangle downLeft"></div>
             <div id="bottom-right" className="animated-triangle downRight"></div>
             <div className="experience-card-image-container" style={{ backgroundColor: props.exp.backgroundColor }}>
-                <img style={{ display: 'flex', alignSelf: 'flex-start', height: '100%', color: props.exp.backgroundColor }} src={require(`../assets/${props.exp.image}`)} alt='eventurely' />
+                <img loading={'lazy'} style={{ display: 'flex', alignSelf: 'flex-start', height: '100%', color: props.exp.backgroundColor }} src={require(`../assets/${props.exp.image}`)} alt='eventurely' />
             </div>
             <div className="experience-card-text-container">
                 <div className="experience-card-top-text-container">
