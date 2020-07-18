@@ -23,3 +23,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.root-container {
+  height: 100%;
+  width: 100%;
+  font-family: Calamity-Regular;
+}

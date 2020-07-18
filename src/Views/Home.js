@@ -1,8 +1,34 @@
-import React from 'react';
-import Buttons from '../Components/Buttons';
-import '../app.css';
+import React, { useState } from 'react';
+import HomeButton from '../Components/HomeButton';
+import '../css/home.css';
 
 export default function Home(props) {
+    const [hoveredButton, setHoveredButton] = useState(0);
+    const buttons = [
+        {
+            text: 'Experience',
+            onClick: () => {
+                props.setCurrentScreen('experience');
+            }
+        },
+        {
+            text: 'Skills',
+            onClick: () => console.log('skillz')
+        },
+        {
+            text: 'Options',
+            onClick: () => console.log('options')
+        },
+        {
+            text: 'amiibo',
+            onClick: () => console.log('amiibo')
+        },
+        {
+            text: 'View Source',
+            onClick: () => window.open('https://github.com/rkarim0598/rkarim0598.github.io')
+        }
+    ];
+
     return (
         <div
             className={`image-container ${props.currentScreen !== 'home' && 'blur'}`}
@@ -23,10 +49,18 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div className="bottom-half-container">
-                    <Buttons
-                        setCurrentScreen={props.setCurrentScreen}
-                        currentScreen={props.currentScreen}
-                    />
+                    <div className="routes-container">
+                        {props.currentScreen === 'home' &&
+                            buttons.map((button, index) =>
+                                <HomeButton 
+                                    key={button.text} 
+                                    button={button} 
+                                    onHover={() => setHoveredButton(index)} 
+                                    hovered={hoveredButton === index}
+                                />
+                            )
+                        }
+                    </div>
                     <div className="credits-container">
                         <div className="credit">
                             Ver 0.0.1

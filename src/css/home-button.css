@@ -1,0 +1,76 @@
+.route-button {
+    font-size: clamp(15px, 2.5vmin, 2.5vmin);
+    font-style: italic;
+    font-weight: 600;
+    color: #fffb;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.route-button:hover {
+    cursor: pointer;
+}
+
+.route-button:focus {
+    outline: none;
+}
+
+.route-button::-moz-focus-inner {
+    border: 0;
+}
+
+.icon-button-container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icon {
+    display: none;
+    height: 1.5vmin;
+    width: 4.5vmin;
+    padding-right: 10px;
+}
+
+.icon-visible {
+    display: flex;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    color: white;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes shift {
+    0% {
+        padding-right: 10px;
+    }
+    60% {
+        padding-right: 13px;
+    }
+    100% {
+        padding-right: 10px;
+    }
+}
+
+@keyframes shift {
+    0% {
+        padding-right: 10px;
+    }
+    60% {
+        padding-right: 13px;
+    }
+    100% {
+        padding-right: 10px;
+    }
+}
+
+.shift {
+    -webkit-animation-name: shift;
+    animation-name: shift;
+}
