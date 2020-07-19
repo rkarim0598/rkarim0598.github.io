@@ -18,7 +18,9 @@ export default function Experience(props) {
                 )}
             </div>
             <button
-                onClick={() => props.setCurrentScreen('home')}
+                onClick={() => {
+                    props.setCurrentScreen('home')
+                }}
                 className="experience-back-button"
             >Back</button>
         </div>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './Views/Home';
 import Experience from './Views/Experience';
 import Contact from './Views/Contact';
 import jingled from './assets/jingled.jpg';
+import useRouter from './hooks/useRouter';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('home');
+  const [currentScreen, setCurrentScreen] = useRouter('');
 
   return (
     <div className="root-container">

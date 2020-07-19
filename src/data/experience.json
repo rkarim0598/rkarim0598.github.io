@@ -12,7 +12,7 @@
     },
     {
         "title": "SWE Intern",
-        "company": "MoreSteam.com",
+        "company": "MoreSteam",
         "location": "Powell, OH",
         "date": "May - Jul '19",
         "description": [
@@ -41,16 +41,18 @@
         "description": [
             "Completed 3-week intensive course focused on developing proficiency with JavaScript, ReactJS, Firebase, and skills needed for tech industry"
         ],
-        "image": "techpoint.jpeg"
+        "image": "techpoint.jpeg",
+        "backgroundColor": "#353336"
     },
     {
         "title": "Teaching Assistant",
-        "company": "U. Notre Dame",
+        "company": "Notre Dame",
         "location": "Notre Dame, IN",
         "date": "Jan - May '18",
         "description": [
             "Assisted students in using Verilog and Altera DE2 boards for Logic Design course"
         ],
-        "image": "nd.jpg"
+        "image": "nd.jpg",
+        "backgroundColor": "#041C42"
     }
 ]

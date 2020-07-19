@@ -46,11 +46,12 @@ export default function Home(props) {
             alt: "LinkedIn logo"
         },
         {
-            type: 'svg',
-            url: "#",
+            type: 'button',
             image: mail,
             alt: "Mail logo",
-            onClick: () => props.setCurrentScreen('contact')
+            onClick: () => {
+                props.setCurrentScreen('contact');
+            }
         }
     ]
 
@@ -89,18 +90,29 @@ export default function Home(props) {
                 </div>
                 <div style={{ position: 'absolute', left: 0, bottom: '50px', display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
                     {links.map((link, index) =>
-                        <div style={{ paddingRight: '10vmin', paddingLeft: '10vmin' }}>
-                            <a
-                                key={index}
-                                href={link.url}
-                                onClick={() => link.onClick && link.onClick()}
-                            >
-                                <img
-                                    src={link.image}
-                                    style={{ width: 'calc(30px + 5vw)' }}
-                                    alt={link.alt}
-                                />
-                            </a>
+                        <div key={index} style={{ paddingRight: '10vmin', paddingLeft: '10vmin' }}>
+                            {link.type === undefined ?
+                                <a
+                                    href={link.url}
+                                    onClick={() => link.onClick && link.onClick()}
+                                >
+                                    <img
+                                        src={link.image}
+                                        style={{ width: 'calc(30px + 5vw)' }}
+                                        alt={link.alt}
+                                    />
+                                </a> :
+                                <button
+                                    className="plain-button"
+                                    onClick={() => link.onClick && link.onClick()}
+                                >
+                                    <img
+                                        src={link.image}
+                                        style={{ width: 'calc(30px + 5vw)' }}
+                                        alt={link.alt}
+                                    />
+                                </button>
+                            }
                         </div>
                     )}
                 </div>
