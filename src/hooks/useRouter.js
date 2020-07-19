@@ -5,9 +5,10 @@ export default function useRouter() {
 
     const determineCurrentScreen = () => {
         const path = window.location.href.split('/')[3];
+
         setCurrentScreen(path === 'experience' ?
             'experience' :
-            ['contact', '#contact'].includes(path) ?
+            path === 'contact' ?
                 'contact' :
                 path === 'play' ?
                     'play' :

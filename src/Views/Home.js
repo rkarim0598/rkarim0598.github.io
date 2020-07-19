@@ -25,8 +25,10 @@ export default function Home(props) {
             onClick: () => console.log('skillz')
         },
         {
-            text: 'Coming Soon',
-            onClick: () => console.log('options')
+            text: 'About',
+            onClick: () => {
+                console.log('about');
+            }
         },
         {
             text: 'View Source',
@@ -94,7 +96,7 @@ export default function Home(props) {
                             {link.type === undefined ?
                                 <a
                                     href={link.url}
-                                    onClick={() => link.onClick && link.onClick()}
+                                    style={props.currentScreen !== 'home' ? { pointerEvents: 'none', cursor: 'default' } : {}}                                    
                                 >
                                     <img
                                         src={link.image}
@@ -105,6 +107,7 @@ export default function Home(props) {
                                 <button
                                     className="plain-button"
                                     onClick={() => link.onClick && link.onClick()}
+                                    disabled={props.currentScreen !== 'home'}
                                 >
                                     <img
                                         src={link.image}
