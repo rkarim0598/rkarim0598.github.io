@@ -3,8 +3,10 @@ import '../css/experience-card.css';
 
 export default function (props) {
     return (
-        <div
+        <button
             className="hovered-experience"
+            onClick={props.onClick}
+            // style={{ borderStyle: 'none', marginRight: 0, marginLeft: 0, paddingLeft: 0, paddingRight: 0 }}
         >
             <div id="top-left" className="animated-triangle upLeft"></div>
             <div id="top-right" className="animated-triangle upRight"></div>
@@ -33,6 +35,6 @@ export default function (props) {
                     </div>}
                 </div>
             </div>
-        </div>
+        </button>
     )
 }

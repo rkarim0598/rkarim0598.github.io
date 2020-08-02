@@ -13,6 +13,10 @@
     border-width: 0.5vmin;
     border-color: black;
     position: relative;
+    padding: 0;
+    text-align: left;
+    color: white;
+    font-family: Calamity-Regular;
 }
 
 .hovered-experience:hover {
@@ -26,6 +30,11 @@
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .animated-triangle {
@@ -66,21 +75,41 @@
 .upLeft {
     -webkit-animation-name: upLeft;
     animation-name: upLeft;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .upRight {
     -webkit-animation-name: upRight;
     animation-name: upRight;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .downLeft {
     -webkit-animation-name: downLeft;
     animation-name: downLeft;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .downRight {
     -webkit-animation-name: downRight;
     animation-name: downRight;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 @-webkit-keyframes upLeft {
@@ -207,7 +236,6 @@
     display: flex;
     align-self: flex-start;
     height: 100%;
-    min-width: 10vw;
     align-items: center;
     justify-content: center;
 }

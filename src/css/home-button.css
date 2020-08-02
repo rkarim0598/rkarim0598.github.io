@@ -1,4 +1,6 @@
 .route-button {
+    font-family: Calamity-Regular;
+    text-decoration: none;
     font-size: calc(15px + 0.25vw);
     font-style: italic;
     font-weight: 600;
