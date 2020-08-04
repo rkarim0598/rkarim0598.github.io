@@ -9,6 +9,18 @@
         ],
         "image": "eventurely.svg",
         "backgroundColor": "#06204B",
+        "id": "eventurely",
+        "website": "https://eventurely.app",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "Eventurely is a 100% student built cross platform mobile app focused on helping students find student groups and connections. After serving a couple years as a regular dev, I grew into the role of lead developer. My coding responsibilities included building out the majority of the initial UI and app architecture, as well as setting up all Firebase related cloud functions and data. I wrote a script to import event data from a campus provider into our database using Python and Pandas. As a team leader, I gave tutorials to help teach new concepts. Much of my time was spent reviewing code to help ensure the use of best practices. This experience has been crucial to my development and leadership skills. I now serve as an advisor."
+            },
+            {
+                "type": "buzzwords",
+                "text": "React Native, Expo, Mobx, React Hooks, Python, Leadership, Firebase, Firebase Functions"
+            }
+        ],
         "current": true
     },
     {
@@ -20,7 +32,28 @@
             "Assisted in development and design of front-end dashboard view using VueJS to allow clients to easily monitor and visualize students' progress in courses"
         ],
         "image": "moresteam-white.png",
-        "backgroundColor": "#06204B"
+        "backgroundColor": "#06204B",
+        "id": "moresteam",
+        "website": "https://moresteam.com",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "MoreSteam creates online courses for Lean Six Sigma training. Here I received the opportunity to drive the development of a new product called Coach View, which gives clients a dashboard view of employees' course progress. In terms of implementation, I served as the main front end developer on Coach View while I was there, and you can view a piece of my work in the image below. This is where I really learned CSS (CSS Grid ftw!). I also served as the team leader. I got an intro to Agile as well; we had daily standups and weekly sprints."
+            },
+            {
+                "type": "buzzwords",
+                "text": "VueJS, JS, CSS, C#, Agile, Columbus Clippers, ColdFusion"
+            },
+            {
+                "type": "link",
+                "url": "https://www.moresteam.com/training/coaching-dashboard.cfm"
+            },
+            {
+                "type": "image",
+                "src": "students-widget-expanded.png",
+                "alt": "Coach View"
+            }
+        ]
     },
     {
         "title": "SWE Intern",
@@ -32,7 +65,9 @@
             "Implemented a POC push notification system using Node.js and Push API"
         ],
         "image": "conventus-logo.png",
-        "backgroundColor": "#265D5B"
+        "backgroundColor": "#265D5B",
+        "id": "conventus",
+        "website": "https://www.cvlending.com/"
     },
     {
         "title": "Xtern Bootcamp",
@@ -43,7 +78,9 @@
             "Completed 3-week intensive course focused on developing proficiency with JavaScript, ReactJS, Firebase, and skills needed for tech industry"
         ],
         "image": "techpoint.jpeg",
-        "backgroundColor": "#353336"
+        "backgroundColor": "#353336",
+        "id": "techpoint",
+        "website": "https://techpoint.org/"
     },
     {
         "title": "Teaching Assistant",
@@ -54,6 +91,8 @@
             "Assisted students in using Verilog and Altera DE2 boards for Logic Design course"
         ],
         "image": "nd.jpg",
-        "backgroundColor": "#041C42"
+        "backgroundColor": "#041C42",
+        "id": "notredame",
+        "website": "https://nd.edu"
     }
 ]

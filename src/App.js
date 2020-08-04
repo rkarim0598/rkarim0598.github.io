@@ -4,6 +4,8 @@ import Experience from './Views/Experience';
 import Contact from './Views/Contact';
 import jingled from './assets/jingled.jpg';
 import useRouter from './hooks/useRouter';
+import ExperienceExpCard from './Components/ExperienceExpCard';
+import experience from './data/experience.json';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useRouter('');
@@ -14,10 +16,12 @@ function App() {
         currentScreen={currentScreen}
         setCurrentScreen={setCurrentScreen}
       />
-      {currentScreen === 'experience' ?
-        <Experience
-          setCurrentScreen={setCurrentScreen}
-        /> :
+      {currentScreen.split('/')[0] === 'experience' ?
+        currentScreen.split('/')[1] ?
+          <ExperienceExpCard setCurrentScreen={setCurrentScreen} exp={experience.filter(e => e.id === currentScreen.split('/')[1])[0]} /> :
+          <Experience
+            setCurrentScreen={setCurrentScreen}
+          /> :
         currentScreen === 'contact' ?
           <Contact goBack={() => setCurrentScreen('home')} /> :
           currentScreen === 'play' ?
@@ -28,7 +32,6 @@ function App() {
               <button onClick={() => setCurrentScreen('home')} className="plain-button corner-back-button">{'Back >'}</button>
             </div> :
             <></>
-
       }
     </div>
   );
