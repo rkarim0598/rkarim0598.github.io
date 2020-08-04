@@ -46,6 +46,7 @@
             },
             {
                 "type": "link",
+                "text": "A glimpse into Coach View",
                 "url": "https://www.moresteam.com/training/coaching-dashboard.cfm"
             },
             {
@@ -67,7 +68,22 @@
         "image": "conventus-logo.png",
         "backgroundColor": "#265D5B",
         "id": "conventus",
-        "website": "https://www.cvlending.com/"
+        "website": "https://www.cvlending.com/",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "Conventus is a startup bridge lending company. I won't claim to know anything about loans; I was brought on to help development on their websites.  This was my first internship and was part of my Silicon Valley Semester experience through Notre Dame, where I took classes and worked this internship part-time in the Bay Area.  Most of my work focused on building ReactJS components to add to the websites, though I also wrote some bash scripts and did some webpack configuration. I also spent much of the internship building out a proof of concept push notification system to integrate into the website using Node.js and the Push and Notification APIs. Being part of a startup gave me the opportunity to experience all the great things about startups, and also some of those common things mentioned as cons. One perk of working on a team of a whopping four developers was that as an intern, I felt included and useful."
+            },
+            {
+                "type": "link",
+                "text": "More on the Silicon Valley Semester here",
+                "url": "https://california.nd.edu/siliconvalley/"
+            },
+            {
+                "type": "buzzwords",
+                "text": "ReactJS, CSS, Node, Push Notifications, Bash, Webpack, Startup, Python, Pandas"
+            }
+        ]
     },
     {
         "title": "Xtern Bootcamp",
@@ -80,7 +96,22 @@
         "image": "techpoint.jpeg",
         "backgroundColor": "#353336",
         "id": "techpoint",
-        "website": "https://techpoint.org/"
+        "website": "https://techpoint.org/",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "I received the opportunity to participate in the Xtern Bootcamp the summer after my sophomore year of college. For 3 weeks, a group of 30ish students, primarily from universities based in Indiana, lived at Marian University in Indianapolis to learn the ways of JavaScript and ReactJS. We were initially taught the basics of JavaScript before eventually focusing on ReactJS. To learn concepts and gain skill, we would be given a task to complete. We would then spend that day implementing a solution ourselves before coming back tomorrow and working through a solution together as a class, led by our instructor. We also had various guest talks by tech affiliated people in Indianapolis. This is really where my love for ReactJS (and of course JavaScript) started."
+            },
+            {
+                "type": "link",
+                "text": "More on the bootcamp",
+                "url": "https://techpoint.org/xtern-bootcamp/"
+            },
+            {
+                "type": "buzzwords",
+                "text": "JS, ReactJS, Firebase, git, Long's Donuts, Entrepreneurship, Agile"
+            }
+        ]
     },
     {
         "title": "Teaching Assistant",
@@ -93,6 +124,16 @@
         "image": "nd.jpg",
         "backgroundColor": "#041C42",
         "id": "notredame",
-        "website": "https://nd.edu"
+        "website": "https://nd.edu",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "I served as a teaching assistant for the Logic Design course at Notre Dame the spring of my sophomore year. The course itself taught the fundamentals of logic both conceptually and practically, the latter through the use of Altera DE2 boards and Verilog (a hardware description language). My responsibilities included grading homework, projects, and tests, as well as providing one on one help during my office hours. This experience gave me the opportunity to improve my ability to explain and teach concepts. I also had the pleasure of trying to read other students' Verilog code to try to help them, which is when I realized for the first time how difficult it truly is to read code that is not your own. Nevertheless, it was an experience I greatly enjoyed!"
+            },
+            {
+                "type": "buzzwords",
+                "text": "Verilog, Altera DE2 FPGA, Teaching"
+            }
+        ]
     }
 ]

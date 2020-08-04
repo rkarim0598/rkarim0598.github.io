@@ -65,9 +65,9 @@ export default function ExperienceExpCard({ exp }) {
                             deet.type === 'buzzwords' ?
                                 <span key={index}>Buzzwords: <b>{deet.text}</b></span> :
                                 deet.type === 'link' ?
-                                    <a key={index} style={{ color: 'lightblue' }} href={deet.url}>View work here</a> :
+                                    <a key={index} style={{ color: 'lightblue' }} href={deet.url}>{deet.text}</a> :
                                     deet.type === 'image' ?
-                                        <img key={index} src={ms} alt={deet.alt} style={{ width: '100%', height: '100%' }} /> :
+                                        <img key={index} src={ms} alt={deet.alt} style={{ width: '100%' }} /> :
                                         <></>
                     )}
                 </div>
