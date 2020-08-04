@@ -1,32 +1,97 @@
 import { useState, useEffect } from 'react';
+import experience from '../data/experience.json';
 
 export default function useRouter() {
     const [currentScreen, setCurrentScreen] = useState('');
+    const [prevScreen, setPrevScreen] = useState('');
+    const [mounted, setMounted] = useState(false);
+
+    const initialDetermineScreen = () => {
+        let root = window.location.href.split('/')[3];
+        let nested = window.location.href.split('/')[4] || undefined;
+
+        root = root === 'experience' ?
+            'experience' :
+            root === 'contact' ?
+                'contact' :
+                root === 'play' ?
+                    'play' :
+                    'home';
+
+        if (root === 'experience') {
+            if (nested !== undefined) {
+                if (experience.map(exp => exp.id).includes(nested)) {
+                    setCurrentScreen(`${root}/${nested}`)
+                } else {
+                    window.location.href = '/experience'
+                }
+
+            } else {
+                setCurrentScreen('experience');
+            }
+        } else {
+            if (nested !== undefined) {
+                window.location.href = '/' + root;
+            } else {
+                setCurrentScreen(root);
+            }
+        }
+    }
 
     const determineCurrentScreen = () => {
-        const path = window.location.href.split('/')[3];
+        let root = window.location.href.split('/')[3];
 
-        setCurrentScreen(path === 'experience' ?
+        root = root === 'experience' ?
             'experience' :
-            path === 'contact' ?
+            root === 'contact' ?
                 'contact' :
-                path === 'play' ?
+                root === 'play' ?
                     'play' :
-                    'home'
-        );
+                    'home';
+
+
+        if (root === 'experience') {
+            let nested = window.location.href.split('/')[4] || undefined;
+            if (nested !== undefined) {
+                setCurrentScreen(experience.map(exp => exp.id).includes(nested) ?
+                    `${root}/${nested}` :
+                    root
+                );
+            } else {
+                setCurrentScreen('experience');
+            }
+        } else {
+            setCurrentScreen(root);
+        }
     }
 
     useEffect(() => {
-        determineCurrentScreen();
+        initialDetermineScreen();
 
-        return window.addEventListener('popstate', (e) => { 
-            determineCurrentScreen(); 
+        return window.addEventListener('popstate', (e) => {
+            determineCurrentScreen();
         });
     }, [])
 
     useEffect(() => {
-        window.history.pushState({}, null, currentScreen)
-    }, [currentScreen])
+        const old = currentScreen;
+        if (currentScreen.length && prevScreen !== currentScreen) {
+            if (currentScreen.split('/')[0] === 'experience') {
+                let nested = currentScreen.split('/')[1] || undefined;
+                if (nested !== undefined) {
+                    mounted &&
+                        experience.map(exp => exp.id).includes(nested) &&
+                        window.history.pushState({}, null, 'experience/' + nested);
+                } else {
+                    window.history.pushState({}, null, currentScreen);
+                }
+            } else {
+                window.history.pushState({}, null, currentScreen);
+            }
+            setMounted(true);
+            setPrevScreen(old);
+        }
+    }, [currentScreen, mounted, prevScreen])
 
     return [currentScreen, setCurrentScreen];
 }

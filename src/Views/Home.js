@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HomeButton from '../Components/HomeButton';
 import '../css/home.css';
 import git from '../assets/git.png';
-import linkedin from '../assets/LI-In-Bug.png'
+import linkedin from '../assets/linkedin.png';
 import mail from '../assets/mail.svg';
 
 export default function Home(props) {
@@ -31,8 +31,9 @@ export default function Home(props) {
             }
         },
         {
+            type: 'link',
             text: 'View Source',
-            onClick: () => window.open('https://github.com/rkarim0598/rkarim0598.github.io')
+            url: 'https://github.com/rkarim0598/rkarim0598.github.io'
         }
     ];
 
@@ -43,17 +44,17 @@ export default function Home(props) {
             alt: "Git logo"
         },
         {
-            url: "https://www.linkedin.com/in/rayyan-k-16a63b106/",
-            image: linkedin,
-            alt: "LinkedIn logo"
-        },
-        {
             type: 'button',
             image: mail,
             alt: "Mail logo",
             onClick: () => {
                 props.setCurrentScreen('contact');
             }
+        },
+        {
+            url: "https://www.linkedin.com/in/rayyan-k-16a63b106/",
+            image: linkedin,
+            alt: "LinkedIn logo"
         }
     ]
 
@@ -106,6 +107,7 @@ export default function Home(props) {
                                 </a> :
                                 <button
                                     className="plain-button"
+                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'centre' }}
                                     onClick={() => link.onClick && link.onClick()}
                                     disabled={props.currentScreen !== 'home'}
                                 >

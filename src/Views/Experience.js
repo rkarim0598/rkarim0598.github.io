@@ -1,7 +1,9 @@
 import React from 'react';
 import ExperienceCard from '../Components/ExperienceCard';
+import PageHeader from '../Components/PageHeader';
 import experience from '../data/experience.json';
 import '../css/experience.css';
+import BottomBar from '../Components/BottomBar';
 
 export default function Experience(props) {
     return (
@@ -9,20 +11,13 @@ export default function Experience(props) {
             id="experience"
             className="screen"
         >
-            <div className="my-experience-label">
-                My Experience
-            </div>
+            <PageHeader title={'My Experience'} />
             <div className="experiences-container">
                 {experience.map((exp, index) =>
-                    <ExperienceCard key={index} exp={exp} />
+                    <ExperienceCard key={index} exp={exp} onClick={() => props.setCurrentScreen('experience/' + exp.id)} />
                 )}
             </div>
-            <button
-                onClick={() => {
-                    props.setCurrentScreen('home')
-                }}
-                className="experience-back-button"
-            >Back</button>
+            <BottomBar message="Select a card to view more" buttonText={'Home'} onPress={() => props.setCurrentScreen('home')} />
         </div>
     )
 }

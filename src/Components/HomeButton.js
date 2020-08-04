@@ -8,17 +8,26 @@ export default function HomeButton(props) {
             className="icon-button-container"
             onMouseOver={props.onHover}
         >
-            <img 
-                src={floater} 
-                className={`icon shift ${props.hovered && 'icon-visible'}`} 
-                alt="" 
+            <img
+                src={floater}
+                className={`icon shift ${props.hovered && 'icon-visible'}`}
+                alt=""
             />
-            <button className="route-button"
-                style={props.hovered ? { color: 'white' } : {}}
-                onClick={props.button.onClick}
-            >
-                {props.button.text}
-            </button>
+            {props.button.type !== 'link' ?
+                <button className="route-button"
+                    style={props.hovered ? { color: 'white' } : {}}
+                    onClick={props.button.onClick}
+                >
+                    {props.button.text}
+                </button>
+                :
+                <a className="route-button"
+                    style={props.hovered ? { color: 'white' } : {}}
+                    href={props.button.url}
+                >
+                    {props.button.text}
+                </a>
+            }
         </div>
     )
 }
