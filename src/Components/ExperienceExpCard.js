@@ -25,7 +25,6 @@ export default function ExperienceExpCard({ exp }) {
 
     return (
         <div
-            id="experience"
             className="screen"
         >
             <PageHeader title={exp.company} />

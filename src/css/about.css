@@ -1,0 +1,9 @@
+.about-container {
+    height: 80%;
+    width: 80%;
+    max-width: 550px;
+    max-height: 65vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: calc(10px + 1vw);
+    overflow-y: auto;
+}

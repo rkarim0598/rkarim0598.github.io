@@ -19,6 +19,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; 
 }
 
 a, button {
@@ -33,6 +36,7 @@ code {
   height: 100%;
   width: 100%;
   font-family: Calamity-Regular;
+  overflow: hidden;
 }
 
 #play {
@@ -82,4 +86,37 @@ a {
 
 button:disabled {
   cursor: default;
+}
+
+.screen {
+  font-size: 3vmin;
+  position: absolute;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  z-index: 50000;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  /* min-width: 300px; */
+  /* min-height: 400px; */
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 480px) {
+  body::-webkit-scrollbar {
+      width: 10px;
+  }
+  body::-webkit-scrollbar-track {
+      background: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+  }
 }

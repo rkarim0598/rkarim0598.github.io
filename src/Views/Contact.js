@@ -1,11 +1,12 @@
 import React from 'react';
 import PageHeader from '../Components/PageHeader';
+import BottomBar from '../Components/BottomBar';
 import '../css/contact.css';
 
 export default function Contact(props) {
     // old link: action="https://usebasin.com/f/b05ad7051801"
     return (
-        <div id="contact" className="screen">
+        <div className="screen">
             <PageHeader title={'Contact Me'} />
             <form className="contact-form" name="contact" method="POST">
                 <input type="hidden" name="form-name" value="contact" />
@@ -31,10 +32,23 @@ export default function Contact(props) {
                 <textarea
                     name="message"
                     placeholder="Enter message here..."
+                    required
                 />
-                <button className="plain-button form-button" type="submit">Submit</button>
+                <button 
+                    className="plain-button form-button" 
+                    type="submit"
+                    id="contact-submit"
+                >Submit</button>
             </form>
-            <button onClick={props.goBack} className="plain-button corner-back-button form-button">{"Back >"}</button>
+            <BottomBar 
+                leftButton={{
+                    text: 'About',
+                    onPress: () => props.setCurrentScreen('about')
+                }}
+                middleButton={{ 
+                    text: 'Home', 
+                    onPress: () => props.setCurrentScreen('home') 
+                }} />
         </div>
     )
 }

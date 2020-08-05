@@ -16,7 +16,9 @@ export default function useRouter() {
                 'contact' :
                 root === 'play' ?
                     'play' :
-                    'home';
+                    root === 'about' ?
+                        'about' :
+                        'home';
 
         if (root === 'experience') {
             if (nested !== undefined) {
@@ -40,15 +42,15 @@ export default function useRouter() {
 
     const determineCurrentScreen = () => {
         let root = window.location.href.split('/')[3];
-
         root = root === 'experience' ?
             'experience' :
             root === 'contact' ?
                 'contact' :
                 root === 'play' ?
                     'play' :
-                    'home';
-
+                    root === 'about' ?
+                        'about' :
+                        'home';
 
         if (root === 'experience') {
             let nested = currentScreen.split('/')[1] || undefined;
@@ -71,6 +73,7 @@ export default function useRouter() {
         return window.addEventListener('popstate', (e) => {
             determineCurrentScreen();
         });
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {

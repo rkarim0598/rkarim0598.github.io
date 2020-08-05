@@ -5,6 +5,7 @@ import Contact from './Views/Contact';
 import jingled from './assets/jingled.jpg';
 import useRouter from './hooks/useRouter';
 import ExperienceExpCard from './Components/ExperienceExpCard';
+import About from './Views/About';
 import experience from './data/experience.json';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
             setCurrentScreen={setCurrentScreen}
           /> :
         currentScreen === 'contact' ?
-          <Contact goBack={() => setCurrentScreen('home')} /> :
+          <Contact setCurrentScreen={setCurrentScreen} /> :
           currentScreen === 'play' ?
             <div id="play" className="screen">
               <div style={{ height: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -31,7 +32,9 @@ function App() {
               </div>
               <button onClick={() => setCurrentScreen('home')} className="plain-button corner-back-button">{'Back >'}</button>
             </div> :
-            <></>
+            currentScreen === 'about' ?
+              <About setCurrentScreen={setCurrentScreen} /> :
+              <></>
       }
     </div>
   );
