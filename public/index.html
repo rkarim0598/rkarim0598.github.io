@@ -8,7 +8,8 @@
   <meta name="keywords" content="Rayyan, Karim, Eventurely, Moresteam, Conventus, Notre Dame">
   <meta name="author" content="Rayyan Karim">
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Rayyan Karim's personal, BOTW themed website. Why don't you click this link and have a look around?" />
+  <meta name="description"
+    content="Rayyan Karim's personal, BOTW themed website. Why don't you click this link and have a look around?" />
   <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
 
 
@@ -35,7 +36,14 @@
 </head>
 
 <body>
-  <noscript>Welcome to the personal site of Rayyan Karim. I am a recent Computer Science graduate from Notre Dame and have a passion for building tech that improves lives.</noscript>
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <noscript>Welcome to the personal site of Rayyan Karim. I am a recent Computer Science graduate from Notre Dame and
+    have a passion for building tech that improves lives.</noscript>
   <div id="root"></div>
   <!--
       This HTML file is a template.
