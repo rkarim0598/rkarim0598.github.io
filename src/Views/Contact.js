@@ -1,9 +1,11 @@
 import React from 'react';
+import PageHeader from '../Components/PageHeader';
 import '../css/contact.css';
 
 export default function Contact(props) {
     return (
         <div id="contact" className="screen">
+            <PageHeader title={'Contact Me'} />
             <form className="contact-form" action="https://usebasin.com/f/b05ad7051801" method="POST">
                 <span className="contact-instr" style={{ textAlign: 'left' }}>
                     I'd prefer if you contacted me through&nbsp;

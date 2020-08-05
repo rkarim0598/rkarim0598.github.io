@@ -9,15 +9,18 @@ export default function Experience(props) {
     return (
         <div
             id="experience"
-            className="screen"
         >
             <PageHeader title={'My Experience'} />
+            <span style={{ fontSize: 'calc(16px + 1vw' }}>Select a card to view more</span>
             <div className="experiences-container">
                 {experience.map((exp, index) =>
                     <ExperienceCard key={index} exp={exp} onClick={() => props.setCurrentScreen('experience/' + exp.id)} />
                 )}
             </div>
-            <BottomBar message="Select a card to view more" buttonText={'Home'} onPress={() => props.setCurrentScreen('home')} />
+            <BottomBar
+                middleButton={{ text: 'Home', onPress: () => props.setCurrentScreen('home') }}
+                rightButton={{ text: 'Play', onPress: () => props.setCurrentScreen('play') }}
+            />
         </div>
     )
 }

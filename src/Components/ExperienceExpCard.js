@@ -72,7 +72,7 @@ export default function ExperienceExpCard({ exp }) {
                     )}
                 </div>
             </div>
-            <BottomBar message={''} buttonText={'Experience'} onPress={() => window.history.back()} />
+            <BottomBar middleButton={{ text: 'Experience', onPress: () => window.history.back() }} />
         </div>
     )
 }

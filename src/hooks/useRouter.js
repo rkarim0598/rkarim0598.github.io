@@ -51,7 +51,7 @@ export default function useRouter() {
 
 
         if (root === 'experience') {
-            let nested = window.location.href.split('/')[4] || undefined;
+            let nested = currentScreen.split('/')[1] || undefined;
             if (nested !== undefined) {
                 setCurrentScreen(experience.map(exp => exp.id).includes(nested) ?
                     `${root}/${nested}` :
