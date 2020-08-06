@@ -11,8 +11,8 @@ export default function Experience(props) {
             className="screen"
         >
             <PageHeader title={'My Experience'} />
-            <span style={{ fontSize: 'calc(16px + 1vw' }}>Select a card to view more</span>
-            <div className="experiences-container">
+            <span className="content-fade fadeIn" style={{ fontSize: 'calc(16px + 1vw' }}>Select a card to view more</span>
+            <div className="content-fade fadeIn experiences-container">
                 {experience.map((exp, index) =>
                     <ExperienceCard key={index} exp={exp} onClick={() => props.setCurrentScreen('experience/' + exp.id)} />
                 )}

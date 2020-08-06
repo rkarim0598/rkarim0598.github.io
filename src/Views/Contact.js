@@ -8,7 +8,7 @@ export default function Contact(props) {
     return (
         <div className="screen">
             <PageHeader title={'Contact Me'} />
-            <form className="contact-form" name="contact" method="POST">
+            <form className="contact-form content-fade fadeIn" name="contact" method="POST">
                 <input type="hidden" name="form-name" value="contact" />
                 <span className="contact-instr" style={{ textAlign: 'left' }}>
                     I'd prefer if you contacted me through&nbsp;

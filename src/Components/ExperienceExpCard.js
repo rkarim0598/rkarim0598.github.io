@@ -28,7 +28,7 @@ export default function ExperienceExpCard({ exp }) {
             className="screen"
         >
             <PageHeader title={exp.company} />
-            <div className="experiences-container" style={{ overflow: 'hidden', padding: '3px', paddingRight: '3px', display: 'flex', overflowY: 'none', backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '85%', maxWidth: '550px' }}>
+            <div className="content-fade fadeIn experiences-container" style={{ overflow: 'hidden', padding: '3px', paddingRight: '3px', display: 'flex', overflowY: 'none', backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '85%', maxWidth: '550px' }}>
                 <div style={{ display: 'flex', width: '100%', height: 'calc(80px + 10vmin)', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <div style={{ backgroundColor: exp.backgroundColor }}>
                         <img
