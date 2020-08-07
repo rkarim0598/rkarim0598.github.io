@@ -6,6 +6,8 @@ import jingled from './assets/jingled.jpg';
 import useRouter from './hooks/useRouter';
 import ExperienceExpCard from './Components/ExperienceExpCard';
 import About from './Views/About';
+import Projects from './Views/Projects';
+import Skills from './Views/Skills';
 import experience from './data/experience.json';
 
 function App() {
@@ -25,16 +27,13 @@ function App() {
           /> :
         currentScreen === 'contact' ?
           <Contact setCurrentScreen={setCurrentScreen} /> :
-          currentScreen === 'play' ?
-            <div id="play" className="screen">
-              <div style={{ height: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={jingled} style={{ width: '100%' }} alt="You just got JINGLED" />
-              </div>
-              <button onClick={() => setCurrentScreen('home')} className="plain-button corner-back-button">{'Back >'}</button>
-            </div> :
-            currentScreen === 'about' ?
-              <About setCurrentScreen={setCurrentScreen} /> :
-              <></>
+          currentScreen === 'projects' ?
+            <Projects setCurrentScreen={setCurrentScreen} /> :
+            currentScreen === 'skills' ?
+              <Skills setCurrentScreen={setCurrentScreen} /> :
+              currentScreen === 'about' ?
+                <About setCurrentScreen={setCurrentScreen} /> :
+                <></>
       }
     </div>
   );

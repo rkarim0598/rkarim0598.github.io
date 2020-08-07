@@ -14,11 +14,13 @@ export default function useRouter() {
             'experience' :
             root === 'contact' ?
                 'contact' :
-                root === 'play' ?
-                    'play' :
-                    root === 'about' ?
-                        'about' :
-                        'home';
+                root === 'projects' ?
+                    'projects' :
+                    root === 'skills' ?
+                        'skills' :
+                        root === 'about' ?
+                            'about' :
+                            'home';
 
         if (root === 'experience') {
             if (nested !== undefined) {
@@ -46,11 +48,13 @@ export default function useRouter() {
             'experience' :
             root === 'contact' ?
                 'contact' :
-                root === 'play' ?
-                    'play' :
-                    root === 'about' ?
-                        'about' :
-                        'home';
+                root === 'projects' ?
+                    'projects' :
+                    root === 'skills' ?
+                        'skills' :
+                        root === 'about' ?
+                            'about' :
+                            'home';
 
         if (root === 'experience') {
             let nested = currentScreen.split('/')[1] || undefined;

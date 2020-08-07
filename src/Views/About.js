@@ -30,8 +30,8 @@ export default function About(props) {
             </div>
             <BottomBar
                 leftButton={{
-                    text: 'Exp',
-                    onPress: () => props.setCurrentScreen('experience')
+                    text: 'Skills',
+                    onPress: () => props.setCurrentScreen('skills')
                 }}
                 middleButton={{
                     text: 'Home',

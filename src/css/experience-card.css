@@ -20,11 +20,11 @@
     font-family: Calamity-Regular;
 }
 
-.hovered-experience:hover {
+.card-anim:hover {
     border-color: white;
 }
 
-.hovered-experience:hover #top-left, .hovered-experience:hover #top-right, .hovered-experience:hover #bottom-left, .hovered-experience:hover #bottom-right {
+.card-anim:hover #top-left, .card-anim:hover #top-right, .card-anim:hover #bottom-left, .card-anim:hover #bottom-right {
     display: unset;
     -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;

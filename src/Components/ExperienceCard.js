@@ -4,7 +4,7 @@ import '../css/experience-card.css';
 export default function (props) {
     return (
         <button
-            className="hovered-experience"
+            className="hovered-experience card-anim"
             onClick={props.onClick}
             // style={{ borderStyle: 'none', marginRight: 0, marginLeft: 0, paddingLeft: 0, paddingRight: 0 }}
         >

@@ -19,7 +19,7 @@ export default function Experience(props) {
             </div>
             <BottomBar
                 middleButton={{ text: 'Home', onPress: () => props.setCurrentScreen('home') }}
-                rightButton={{ text: 'About', onPress: () => props.setCurrentScreen('about') }}
+                rightButton={{ text: 'Projects', onPress: () => props.setCurrentScreen('projects') }}
             />
         </div>
     )

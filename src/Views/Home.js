@@ -15,14 +15,14 @@ export default function Home(props) {
             }
         },
         {
-            text: 'Play Game',
+            text: 'Projects',
             onClick: () => {
-                props.setCurrentScreen('play');
+                props.setCurrentScreen('projects');
             }
         },
         {
             text: 'Skills',
-            onClick: () => console.log('skillz')
+            onClick: () => props.setCurrentScreen('skills')
         },
         {
             text: 'About',
