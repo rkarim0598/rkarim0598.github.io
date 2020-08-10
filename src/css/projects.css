@@ -157,3 +157,28 @@
         top: calc(100% - 2vmin);
     }
 }
+
+.border-hover {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    outline: none;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.border-hover:hover {
+    background-color: white;
+}
+
+.border-hover:hover .proj-text-container {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.proj-text-container {
+    background-color: transparent;
+}
