@@ -92,7 +92,7 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div style={{ position: 'absolute', left: 0, bottom: '10px', display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-                    {links.map((link, index) =>
+                    {props.currentScreen === 'home' && links.map((link, index) =>
                         <div key={index} style={{ paddingRight: '10vmin', paddingLeft: '10vmin' }}>
                             {link.type === undefined ?
                                 <a
