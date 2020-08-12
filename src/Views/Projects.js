@@ -280,7 +280,7 @@ export default function Projects(props) {
                                         position: 'relative',
                                         minWidth: '100px',
                                         minHeight: '100px',
-                                        marginBottom: '25px',
+                                        marginBottom: '10px',
                                         display: 'flex',
                                         flexDirection: 'column',
                                         alignItems: 'center',
