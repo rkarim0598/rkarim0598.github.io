@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PageHeader from '../Components/PageHeader';
 import BottomBar from '../Components/BottomBar';
-import '../css/projects.css';
 import RightChevron from '../Components/RightChevron';
 import LeftChevron from '../Components/LeftChevron';
+import '../css/projects.css';
+import link from '../assets/external-link.svg';
+import git from '../assets/git.png';
 
 const projects = [
     {
@@ -47,7 +49,7 @@ const projects = [
         "contentType": "image",
         "image": "npc.png",
         "repo": "https://github.com/rkarim0598/tethical",
-        "site": "https://tethical.web.app/",
+        "site": "https://np-compete.web.app/",
         "description": "NP Compete was created with the purpose of bringing more awareness to nonprofits around South Bend.  Inspired by the model of ND Day, a day long event that focuses on fundraising for ND dorms and clubs, NP Compete attempts to provide a fun and interactive experience while also raising money for many good causes.  Users could donate (through Stripe) and vote (through Twitter hashtags) for their desired nonprofits, as well as learn more about each nonprofit."
     },
     {
@@ -118,6 +120,7 @@ export default function Projects(props) {
             >
                 <div
                     style={{
+                        position: 'relative',
                         display: 'flex',
                         flex: 1,
                         flexDirection: 'column',
@@ -133,6 +136,37 @@ export default function Projects(props) {
                     {currIndex === null ?
                         <span style={{ textAlign: 'center' }}>Select a tile to learn more!</span> :
                         <>
+                            <div
+                                style={{
+                                    zIndex: 5000,
+                                    position: 'absolute',
+                                    top: 5,
+                                    right: 5,
+                                    width: '15%',
+                                    maxWidth: '70px',
+                                    minWidth: '50px',
+                                    alignItems: 'center',
+                                    justifyContent: 'flex-end',
+                                    // height: '10%',
+                                    display: 'flex',
+                                    flexDirection: 'row'
+                                }}
+                            >
+                                {currProj.repo &&
+                                    <div style={{ width: 'calc(25px + 0.15vw)', paddingRight: currProj.site ? '5px' : '0px' }}>
+                                        <a href={currProj.repo}>
+                                            <img src={git} alt="git" width="100%" />
+                                        </a>
+                                    </div>
+                                }
+                                {currProj.site &&
+                                    <div style={{ width: 'calc(25px + 0.15vw)' }}>
+                                        <a href={currProj.site}>
+                                            <img src={link} alt="link" width="100%" />
+                                        </a>
+                                    </div>
+                                }
+                            </div>
                             <span style={{ textAlign: 'center', fontSize: 'calc(20px + .15vw)' }}>{currProj.name}</span>
                             {currProj.contentType &&
                                 <>
