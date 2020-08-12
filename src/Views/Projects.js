@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHeader from '../Components/PageHeader';
 import BottomBar from '../Components/BottomBar';
 import '../css/projects.css';
+import RightChevron from '../Components/RightChevron';
+import LeftChevron from '../Components/LeftChevron';
 
 const projects = [
     {
         "imgtype": "text",
-        "text": "tiNDer",
         "name": "tiNDer",
         "abbr": "tiNDer",
         "built": "Spring '20, ND Adv. Databases Course",
@@ -18,7 +19,6 @@ const projects = [
     },
     {
         "imgtype": "text",
-        "text": "SS",
         "name": "Silver Slugger",
         "abbr": "Silver Slugger",
         "built": "Spring '20, ND Intro to Data Science",
@@ -30,7 +30,6 @@ const projects = [
     },
     {
         "imgtype": "text",
-        "text": "EG",
         "name": "Ethics Game",
         "abbr": "Ethics Game",
         "built": "Spring '20, ND Agile Course",
@@ -41,7 +40,6 @@ const projects = [
     },
     {
         "imgtype": "text",
-        "text": "NPC",
         "name": "NP Compete",
         "abbr": "NP Compete",
         "built": "Fall '19, ND Hackathon",
@@ -66,7 +64,6 @@ const projects = [
     },
     {
         "imgtype": "text",
-        "text": "TT",
         "name": "Tethical Test",
         "abbr": "Tethical Test",
         "built": "Spring '19, ND Agile Course",
@@ -94,7 +91,17 @@ const projects = [
 
 export default function Projects(props) {
     const [currIndex, setCurrIndex] = useState(null);
+    const [iframeLoaded, setIframeLoaded] = useState(false);
+    const [showList, setShowList] = useState(true);
     const currProj = projects[currIndex];
+
+    useEffect(() => {
+
+    })
+
+    useEffect(() => {
+        setIframeLoaded(false);
+    }, [currIndex])
 
     return (
         <div className="screen">
@@ -114,10 +121,8 @@ export default function Projects(props) {
                         display: 'flex',
                         flex: 1,
                         flexDirection: 'column',
-                        height: '100%',
                         maxHeight: '100%',
                         overflowY: 'auto',
-                        // alignItems: 'center',
                         justifyContent: currIndex !== null ? 'space-between' : 'center',
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',
                         padding: '5px',
@@ -139,20 +144,35 @@ export default function Projects(props) {
                                                 paddingTop: '30px',
                                                 height: 0,
                                                 width: '100%',
-                                                overflow: 'hidden'
+                                                overflow: 'hidden',
                                             }}
                                         >
-
                                             <iframe
+                                                onLoad={() => setIframeLoaded(true)}
+                                                title={`${currProj.name} ${currProj.video}`}
                                                 width="100%"
                                                 height="100%"
                                                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', heigth: '100%' }}
                                                 sandbox="allow-same-origin allow-scripts allow-popups"
                                                 src={projects[currIndex][currProj.contentType]}
-                                                frameborder="0"
+                                                frameBorder="0"
                                                 allowFullScreen
                                                 allow="full-screen; picture-in-picture; accelerometer; encrypted-media"
                                             />
+                                            {!iframeLoaded && <div
+                                                style={{
+                                                    position: 'absolute',
+                                                    zIndex: 1000,
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    backgroundColor: 'rgba(0, 0, 0, 0.9)'
+                                                }}
+                                            >
+                                                <span>loading ...</span>
+                                            </div>}
                                         </div>
                                         :
                                         <img
@@ -171,67 +191,117 @@ export default function Projects(props) {
                         </>
                     }
                 </div>
-                <div
-                    style={{
-                        display: 'flex',
-                        maxHeight: '100%',
-                        width: '120px',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        overflowY: 'auto',
-                        overflowX: 'hidden'
-                    }}
-                >
-                    {projects.map((proj, index) =>
+                {showList ?
+                    <div
+                        style={{
+                            display: 'flex',
+                            maxHeight: '100%',
+                            width: '120px',
+                            flexDirection: 'column',
+                        }}
+                    >
                         <div
-                            key={proj.name}
                             style={{
                                 position: 'relative',
-                                minWidth: '100px',
-                                minHeight: '120px',
-                                marginBottom: '25px',
                                 display: 'flex',
+                                flex: 1,
+                                width: '100%',
                                 flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: 'center',
+                                overflowY: 'auto',
+                                overflowX: 'hidden'
                             }}
                         >
                             <button
-                                className="card-anim border-hover"
-                                onClick={() => setCurrIndex(index)}
-                            >
-                                <div id="top-left" className="animated-triangle proj-upLeft"></div>
-                                <div id="top-right" className="animated-triangle proj-upRight"></div>
-                                <div id="bottom-left" className="animated-triangle proj-downLeft"></div>
-                                <div id="bottom-right" className="animated-triangle proj-downRight"></div>
-                                {proj.imgtype === 'text' ?
-                                    <div className="proj-text-container" style={{ display: 'flex', height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center', fontFamily: 'HyliaSerifBeta-Regular', fontSize: 'calc(20px + .15vw)', color: 'white' }}>{proj.text}</div> :
-                                    <img
-                                        className="proj-text-container"
-                                        alt={proj.abbr}
-                                        src={require(`../assets/${proj.img}`)}
-                                        style={{ width: '100%', height: '100%' }}
-                                    />
-                                }
-                            </button>
-                            <div
                                 style={{
-                                    whiteSpace: 'nowrap',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
+                                    zIndex: 5000,
+                                    position: '-webkit-sticky',
+                                    position: 'sticky',
+                                    top: 0,
                                     display: 'flex',
-                                    flex: 1,
+                                    padding: 0,
+                                    margin: 0,
+                                    borderStyle: 'none',
+                                    width: '100px',
+                                    height: '5%',
+                                    minHeight: '30px',
+                                    marginBottom: '10px',
+                                    backgroundColor: 'rgba(0, 0, 0, 1)',
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    alignSelf: 'center',
+                                    fontSize: 'calc(16px + .15vw)',
+                                    color: 'white',
                                 }}
+                                onClick={() => setShowList(false)}
                             >
-                                <span
-                                    style={{ fontSize: 'calc(16px + 0.15vw)' }}
-                                >{proj.abbr}</span>
-                            </div>
+                                <span>Hide</span>
+                                <div style={{ height: '100%', width: '15%' }}>
+                                    <RightChevron />
+                                </div>
+                            </button>
+                            {projects.map((proj, index) =>
+                                <div
+                                    key={proj.name}
+                                    style={{
+                                        position: 'relative',
+                                        minWidth: '100px',
+                                        minHeight: '100px',
+                                        marginBottom: '25px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <button
+                                        className="card-anim border-hover"
+                                        onClick={() => setCurrIndex(index)}
+                                    >
+                                        <div id="top-left" className="animated-triangle proj-upLeft"></div>
+                                        <div id="top-right" className="animated-triangle proj-upRight"></div>
+                                        <div id="bottom-left" className="animated-triangle proj-downLeft"></div>
+                                        <div id="bottom-right" className="animated-triangle proj-downRight"></div>
+                                        {proj.imgtype === 'text' ?
+                                            <div className="proj-text-container" style={{ display: 'flex', height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center', fontFamily: 'HyliaSerifBeta-Regular', fontSize: 'calc(20px + .15vw)', color: 'white' }}>{proj.name}</div> :
+                                            <img
+                                                className="proj-text-container"
+                                                alt={proj.abbr}
+                                                src={require(`../assets/${proj.img}`)}
+                                                style={{ width: '100%', height: '100%' }}
+                                            />
+                                        }
+                                    </button>
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
+                    </div>
+                    :
+                    <button
+                        style={{
+                            display: 'flex',
+                            margin: 0,
+                            padding: 0,
+                            borderStyle: 'none',
+                            width: '5vmin',
+                            minWidth: '50px',
+                            height: '100%',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginLeft: '10px'
+                        }}
+                        onClick={() => setShowList(true)}
+                    >
+                        <div
+                            style={{
+                                width: '100%',
+                                height: '50px',
+                            }}
+                        >
+                            <LeftChevron />
+                        </div>
+                    </button>
+                }
             </div >
             <BottomBar
                 leftButton={{
