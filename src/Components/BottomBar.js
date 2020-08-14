@@ -4,7 +4,7 @@ import LeftChevron from './LeftChevron';
 
 export default function BottomBar(props) {
     return (
-        <div style={{ display: 'flex', backgroundColor: 'rgba(0, 0, 0, 0.4)', alignItems: 'center', justifyContent: 'center', height: '5%', width: '100%', paddingLeft: '10px', paddingRight: '10px' }}>
+        <div style={{ display: 'flex', backgroundColor: 'rgba(0, 0, 0, 0.4)', alignItems: 'center', justifyContent: 'center', height: '5%', minHeight: '50px', width: '100%', paddingLeft: '10px', paddingRight: '10px' }}>
             <div style={{ display: 'flex', height: '100%', width: '100%', maxWidth: '550px' }}>
                 <div style={{ width: '33%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
                     {props.leftButton &&
