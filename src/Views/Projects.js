@@ -3,6 +3,7 @@ import PageHeader from '../Components/PageHeader';
 import BottomBar from '../Components/BottomBar';
 import RightChevron from '../Components/RightChevron';
 import LeftChevron from '../Components/LeftChevron';
+import AnimatedSquare from '../Components/AnimatedSquare';
 import '../css/projects.css';
 import link from '../assets/external-link.svg';
 import git from '../assets/git.png';
@@ -274,7 +275,7 @@ export default function Projects(props) {
                                 </div>
                             </button>
                             {projects.map((proj, index) =>
-                                <div
+                                <AnimatedSquare
                                     key={proj.name}
                                     style={{
                                         position: 'relative',
@@ -286,26 +287,18 @@ export default function Projects(props) {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                     }}
+                                    onClick={() => setCurrIndex(index)}
                                 >
-                                    <button
-                                        className="card-anim border-hover"
-                                        onClick={() => setCurrIndex(index)}
-                                    >
-                                        <div id="top-left" className="animated-triangle proj-upLeft"></div>
-                                        <div id="top-right" className="animated-triangle proj-upRight"></div>
-                                        <div id="bottom-left" className="animated-triangle proj-downLeft"></div>
-                                        <div id="bottom-right" className="animated-triangle proj-downRight"></div>
-                                        {proj.imgtype === 'text' ?
-                                            <div className="proj-text-container" style={{ display: 'flex', height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center', fontFamily: 'HyliaSerifBeta-Regular', fontSize: 'calc(20px + .15vw)', color: 'white' }}>{proj.name}</div> :
-                                            <img
-                                                className="proj-text-container"
-                                                alt={proj.abbr}
-                                                src={require(`../assets/${proj.img}`)}
-                                                style={{ width: '100%', height: '100%' }}
-                                            />
-                                        }
-                                    </button>
-                                </div>
+                                    {proj.imgtype === 'text' ?
+                                        <div className="proj-text-container" style={{ display: 'flex', height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center', fontFamily: 'HyliaSerifBeta-Regular', fontSize: 'calc(20px + .15vw)', color: 'white' }}>{proj.name}</div> :
+                                        <img
+                                            className="proj-text-container"
+                                            alt={proj.abbr}
+                                            src={require(`../assets/${proj.img}`)}
+                                            style={{ width: '100%', height: '100%' }}
+                                        />
+                                    }
+                                </AnimatedSquare>
                             )}
                         </div>
                     </div>

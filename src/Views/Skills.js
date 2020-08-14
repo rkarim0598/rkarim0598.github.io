@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../Components/PageHeader';
 import BottomBar from '../Components/BottomBar';
+import AnimatedSquare from '../Components/AnimatedSquare';
 
 const skills = {
     "Experienced": [
@@ -105,7 +106,7 @@ export default function Skills(props) {
                                 display: 'grid',
                                 gridTemplateColumns: 'repeat(auto-fill, 100px)',
                                 // gridTemplateRows: 'repeat(auto-fill, '
-                                gridGap: '10px',
+                                gridColumnGap: '10px',
                                 width: '100%',
                                 maxHeight: '85%',
                                 overflowY: 'auto'
@@ -115,34 +116,34 @@ export default function Skills(props) {
                                 <div
                                     key={skill.name}
                                     style={{
-                                        // flexFlow: 'row wrap',
-                                        // flex: 1,
-                                        // flexBasis: '25%',
                                         width: '100px',
                                         height: 'calc(100px + 30px)',
                                         textAlign: 'center',
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'space-around',
-                                        // backgroundColor: 'yellow',
-                                        // marginRight: 'auto'
+                                        margin: '5px 5px 0 5px'
                                     }}
                                 >
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 'calc(100% - 30px)', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-                                        {skill.imgType === 'text' ?
-                                            <span style={{ fontSize: 'calc(20px + .15vw)', fontFamily: 'HyliaSerifBeta-Regular' }}>{skill.name}</span>
-                                            :
-                                            <img
-                                                loading="lazy"
-                                                alt={skill.name}
-                                                src={require(`../assets/${skill.imgPath === 'root' ? skill.img : `skills/${skill.img}`}`)}
-                                                style={{
-                                                    height: '90%',
-                                                }}
-                                            ></img>
-                                        }
+                                    <AnimatedSquare type="div" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 'calc(100% - 30px)', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                                        <div className="proj-text-container" style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
+                                            {skill.imgType === 'text' ?
+                                                <span style={{ fontSize: 'calc(20px + .15vw)', fontFamily: 'HyliaSerifBeta-Regular', color: 'white' }}>{skill.name}</span>
+                                                :
+                                                <img
+                                                    loading="lazy"
+                                                    alt={skill.name}
+                                                    src={require(`../assets/${skill.imgPath === 'root' ? skill.img : `skills/${skill.img}`}`)}
+                                                    style={{
+                                                        height: '90%',
+                                                    }}
+                                                ></img>
+                                            }
+                                        </div>
+                                    </AnimatedSquare>
+                                    <div style={{ height: '30px', fontSize: 'calc(14px + .15vw)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <span>{skill.name}</span>
                                     </div>
-                                    <span style={{ height: '30px', fontSize: 'calc(14px + .15vw)' }}>{skill.name}</span>
                                 </div>
                             )}
                         </div>
