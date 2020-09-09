@@ -1,5 +1,25 @@
 [
     {
+        "title": "Developer",
+        "company": "Alfresco",
+        "location": "Chicago, IL",
+        "date": "Sep '20 - Present",
+        "description": [
+            "I just started, I'll let you know when I figure out what I'm doing."
+        ],
+        "image": "alfresco.png",
+        "backgroundColor": "transparent",
+        "id": "alfresco",
+        "website": "https://alfresco.com",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "Coming soon to a personal site near you"
+            }
+        ],
+        "current": true
+    },
+    {
         "title": "Lead Mobile Dev",
         "company": "Eventurely",
         "location": "Notre Dame, IN",
@@ -20,8 +40,7 @@
                 "type": "buzzwords",
                 "text": "React Native, Expo, Mobx, React Hooks, Python, Leadership, Firebase, Firebase Functions"
             }
-        ],
-        "current": true
+        ]
     },
     {
         "title": "SWE Intern",
