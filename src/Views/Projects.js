@@ -17,7 +17,7 @@ const projects = [
         "tech": "VueJS, Node, GraphQL, OracleSQL",
         "repo": "https://github.com/rkarim0598/not-tiNDer",
         "contentType": "video",
-        "video": "https://nocensoring.net/videos/embed/ba19b0e0-2c41-4664-9866-8180604335c4",
+        "video": "https://tube.cloud-libre.eu/videos/embed/9a71284c-a844-4503-9f97-38278fcc57d1",
         "description": "This two person project was created with the aim to make the college dating process easier, friendlier, and more effective. Users take a short personality test and fill out a general profile to get results best fit for them through our algorithm. After doing so, users are able to experience the classic swipe mechanics and match for either general or event-specific dating.  After a match is created, users can also chat with each other.  Check out the video for a quick demo!"
     },
     {
@@ -40,6 +40,14 @@ const projects = [
         "contentType": "video",
         "video": "https://www.youtube.com/embed/NXGjxbPxLn4",
         "description": "I worked in a 5 person team on Ethics Game, which was a project started by a group the previous year that focuses on providing ethical dilemmas that computer science students might one day find themselves considering. We added the ability to add new ethical scenarios through the site and displaying a graphical representation of any given scenario to the user, as well as deploying the site and server to be used in production.  The project was done in an agile environment; we had sprints and sprint reviews, point estimation, etc."
+    },
+    {
+        "imgtype": "text",
+        "name": "B Minor Compiler",
+        "abbr": "B Minor",
+        "built": "Fall '19, ND Compilers Course",
+        "tech": "C, x86, Flex, Bison",
+        "description": "The semester long project in my compilers course involved writing a compiler for a language named B Minor.  The language included typing as well as type inference, along with many of the operations you can do in C.  I built out a pretty printer, type checker, and x86 code generator as part of the compiler.  If you'd like to see the code, just send me a message and I can get you access."
     },
     {
         "imgtype": "text",

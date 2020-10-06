@@ -1,6 +1,6 @@
 [
     {
-        "title": "Developer",
+        "title": "Web/Systems Developer",
         "company": "Alfresco",
         "location": "Chicago, IL",
         "date": "Sep '20 - Present",
@@ -27,7 +27,7 @@
         "description": [
             "Led development of React Native cross-platform mobile app easing discovery of on-campus student groups and events"
         ],
-        "image": "eventurely.svg",
+        "image": "eventurely.jpeg",
         "backgroundColor": "#06204B",
         "id": "eventurely",
         "website": "https://eventurely.app",
