@@ -3,21 +3,24 @@
         "title": "Web/Systems Developer",
         "company": "Alfresco",
         "location": "Chicago, IL",
-        "date": "Sep '20 - Present",
+        "date": "Sep '20 - Oct '20",
         "description": [
-            "I just started, I'll let you know when I figure out what I'm doing."
+            "Implemented configurable authentication using Angular, TypeScript, and the Java Spring framework"
         ],
         "image": "alfresco.png",
         "backgroundColor": "transparent",
         "id": "alfresco",
-        "website": "https://alfresco.com",
+        "website": "https://www.alfresco.com",
         "detailed": [
             {
                 "type": "text",
-                "text": "Coming soon to a personal site near you"
+                "text": "Alfresco is a commercial, open source software company providing electronic content management products and services. 'Twas only a month I spent working for Alfresco, but what a month it was. Although I worked remotely during this time, I still made invaluable friendships and learned a great deal. I had the opportunity to learn Angular, TypeScript, and the Java Spring framework while implementing optional authentication for a consumer-facing product. I was only there for a month because Alfresco was acquired by another company which had to make some cuts. Working with such great people reinforced what I've come to realize after some industry experience -- the people and work culture at a company make all the difference in the world." 
+            },
+            {
+                "type": "buzzwords",
+                "text": "Angular, TypeScript, Java, Spring, Alfresco, Music Fridays, Tomcat, Electron"
             }
-        ],
-        "current": true
+        ]
     },
     {
         "title": "Lead Mobile Dev",

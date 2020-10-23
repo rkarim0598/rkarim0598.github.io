@@ -107,10 +107,6 @@ export default function Projects(props) {
     const currProj = projects[currIndex];
 
     useEffect(() => {
-
-    })
-
-    useEffect(() => {
         setIframeLoaded(false);
     }, [currIndex])
 
