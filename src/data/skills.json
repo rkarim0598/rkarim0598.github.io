@@ -32,6 +32,10 @@
             "img": "vue.png"
         },
         {
+            "name": "Angular",
+            "img": "angular.png"
+        },
+        {
             "name": "Node.js",
             "img": "nodejs.png"
         },
@@ -70,6 +74,10 @@
         {
             "name": "HTML",
             "img": "html.png"
+        },
+        {
+            "name": "SVN",
+            "imgType": "text"
         },
         {
             "name": "Windows",
