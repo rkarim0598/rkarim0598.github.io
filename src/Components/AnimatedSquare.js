@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/animated-square.css';
 
 export default function AnimatedSquare(props) {
     return (

@@ -2,7 +2,6 @@ import React from 'react';
 import Home from './Views/Home';
 import Experience from './Views/Experience';
 import Contact from './Views/Contact';
-import jingled from './assets/jingled.jpg';
 import useRouter from './hooks/useRouter';
 import ExperienceExpCard from './Components/ExperienceExpCard';
 import About from './Views/About';
