@@ -72,7 +72,7 @@ export default function Projects(props) {
                                         <img
                                             style={{ width: '100%' }}
                                             alt={'yada'}
-                                            src={require(`../assets/${currProj.image}`)}
+                                            src={require(`../assets/projects/content/${currProj.image}`)}
                                         />
                                     }
                                 </>
@@ -116,7 +116,7 @@ export default function Projects(props) {
                                         <img
                                             className="proj-text-container"
                                             alt={proj.abbr}
-                                            src={require(`../assets/${proj.img}`)}
+                                            src={require(`../assets/projects/main/${proj.img}`)}
                                             style={{ width: '100%', height: '100%' }}
                                         />
                                     }

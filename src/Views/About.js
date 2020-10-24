@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '../Components/PageHeader';
 import BottomBar from '../Components/BottomBar';
 import '../css/about.css';
-import me from '../assets/me.jpeg';
+import me from '../assets/about/me.jpeg';
 
 export default function About(props) {
     return (

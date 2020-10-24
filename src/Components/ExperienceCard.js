@@ -6,14 +6,13 @@ export default function (props) {
         <button
             className="hovered-experience card-anim"
             onClick={props.onClick}
-            // style={{ borderStyle: 'none', marginRight: 0, marginLeft: 0, paddingLeft: 0, paddingRight: 0 }}
         >
             <div id="top-left" className="animated-triangle upLeft"></div>
             <div id="top-right" className="animated-triangle upRight"></div>
             <div id="bottom-left" className="animated-triangle downLeft"></div>
             <div id="bottom-right" className="animated-triangle downRight"></div>
             <div className="experience-card-image-container" style={{ backgroundColor: props.exp.backgroundColor }}>
-                <img loading={'lazy'} style={{ display: 'flex', alignSelf: 'flex-start', height: '100%', color: props.exp.backgroundColor }} src={require(`../assets/${props.exp.image}`)} alt='eventurely' />
+                <img loading={'lazy'} style={{ display: 'flex', alignSelf: 'flex-start', height: '100%', color: props.exp.backgroundColor }} src={require(`../assets/experience/${props.exp.image}`)} alt='eventurely' />
             </div>
             <div className="experience-card-text-container">
                 <div className="experience-card-top-text-container">

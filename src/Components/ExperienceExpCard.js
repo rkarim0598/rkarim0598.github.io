@@ -2,11 +2,11 @@ import React from 'react';
 import PageHeader from './PageHeader';
 import BottomBar from './BottomBar';
 import link from '../assets/external-link.svg';
-import house from '../assets/home.svg';
-import calendar from '../assets/calendar.svg';
-import briefcase from '../assets/briefcase.svg';
-import pin from '../assets/map-pin.svg';
-import ms from '../assets/students-widget-expanded.png';
+import house from '../assets/experience/expanded/home.svg';
+import calendar from '../assets/experience/expanded/calendar.svg';
+import briefcase from '../assets/experience/expanded/briefcase.svg';
+import pin from '../assets/experience/expanded/map-pin.svg';
+import ms from '../assets/experience/expanded/students-widget-expanded.png';
 
 export default function ExperienceExpCard({ exp }) {
     const IconAndText = ({ image, alt, text }) => {
@@ -34,7 +34,7 @@ export default function ExperienceExpCard({ exp }) {
                         <img
                             loading={'lazy'}
                             style={{ display: 'flex', width: 'calc(80px + 10vmin)', height: '100%' }}
-                            src={require(`../assets/${exp.image}`)}
+                            src={require(`../assets/experience/${exp.image}`)}
                             alt={exp.company}
                         />
                     </div>
