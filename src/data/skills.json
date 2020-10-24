@@ -1,8 +1,17 @@
 {
     "Experienced": [
         {
+            "name": "Git",
+            "imgPath": "root",
+            "img": "git.png"
+        },
+        {
             "name": "JavaScript",
             "img": "js.png"
+        },
+        {
+            "name": "Linux",
+            "img": "linux.png"
         },
         {
             "name": "React",
@@ -15,41 +24,12 @@
         {
             "name": "SQL",
             "imgType": "text"
-        },
-        {
-            "name": "Linux",
-            "img": "linux.png"
-        },
-        {
-            "name": "Git",
-            "imgPath": "root",
-            "img": "git.png"
         }
     ],
     "Familiar": [
         {
-            "name": "Vue",
-            "img": "vue.png"
-        },
-        {
             "name": "Angular",
             "img": "angular.png"
-        },
-        {
-            "name": "Node.js",
-            "img": "nodejs.png"
-        },
-        {
-            "name": "Mobx",
-            "img": "mobx.png"
-        },
-        {
-            "name": "Python",
-            "img": "python.png"
-        },
-        {
-            "name": "Django",
-            "imgType": "text"
         },
         {
             "name": "C",
@@ -60,6 +40,14 @@
             "img": "cpp.png"
         },
         {
+            "name": "CSS",
+            "img": "css.png"
+        },
+        {
+            "name": "Django",
+            "imgType": "text"
+        },
+        {
             "name": "Firebase",
             "img": "firebase.png"
         },
@@ -68,16 +56,40 @@
             "img": "graphql.png"
         },
         {
-            "name": "CSS",
-            "img": "css.png"
-        },
-        {
             "name": "HTML",
             "img": "html.png"
         },
         {
+            "name": "Java",
+            "img": "java.png"
+        },
+        {
+            "name": "Java Spring",
+            "img": "java-spring.svg"
+        },
+        {
+            "name": "Mobx",
+            "img": "mobx.png"
+        },
+        {
+            "name": "Node.js",
+            "img": "nodejs.png"
+        },
+        {
+            "name": "Python",
+            "img": "python.png"
+        },
+        {
             "name": "SVN",
             "imgType": "text"
+        },
+        {
+            "name": "TypeScript",
+            "img": "typescript.png"
+        },
+        {
+            "name": "Vue",
+            "img": "vue.png"
         },
         {
             "name": "Windows",
