@@ -20,7 +20,7 @@ export default function About(props) {
                     In my free time, I enjoy reading (particularly science fiction), geeking out over Dune, telling everyone
                     I know the glories of Linux, working on side projects, and, of course, playing Breath of the Wild.
                     <br/><br/>
-                    In case you're wondering, this site was built with ReactJS, using Create-React-App to bootstrap the site.
+                    In case you're wondering, this site was built with Preact, using Create-React-App to bootstrap the site and create-react-app-rewired to convert to Preact.
                     The site routing is done on the client side with my own little mini router (still a WIP). I grabbed the sans-serif
                     font from <a style={{ color: 'lightblue' }} href="https://www.reddit.com/r/zelda/comments/5txuba/breath_of_the_wild_ui_font/">this reddit post</a> 
                     &nbsp;and the fancy font from <a style={{ color: 'lightblue' }} href="http://artsyomni.com/hyliaserif">Artsy Omni's site</a>. The company images 
