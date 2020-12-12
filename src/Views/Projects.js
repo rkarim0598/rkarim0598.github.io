@@ -35,15 +35,23 @@ export default function Projects(props) {
                             <div className='top-links'>
                                 {currProj.repo &&
                                     <div style={{ paddingRight: currProj.site ? '5px' : '0px' }}>
-                                        <a href={currProj.repo}>
-                                            <img src={git} alt="git" width="100%" />
+                                        <a href={currProj.repo} style={{ display: 'block' }}>
+                                            <img
+                                                src={git}
+                                                alt="git"
+                                                style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+                                            />
                                         </a>
                                     </div>
                                 }
                                 {currProj.site &&
                                     <div>
                                         <a href={currProj.site}>
-                                            <img src={link} alt="link" width="100%" />
+                                            <img
+                                                src={link}
+                                                alt="link"
+                                                style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+                                            />
                                         </a>
                                     </div>
                                 }
