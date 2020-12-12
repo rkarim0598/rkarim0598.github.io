@@ -1,6 +1,30 @@
 [
     {
-        "title": "Web/Systems Developer",
+        "current": true,
+        "title": "Software Developer",
+        "company": "MoreSteam",
+        "location": "Powell, OH",
+        "date": "Dec - Present",
+        "description": [
+            "Creating APIs in C#"
+        ],
+        "image": "moresteam-white.png",
+        "backgroundColor": "#06204B",
+        "id": "moresteam",
+        "website": "https://moresteam.com",
+        "detailed": [
+            {
+                "type": "text",
+                "text": "MoreSteam creates online courses for Lean Six Sigma training. I just started, so not a whole lot to say about my experience yet."
+            },
+            {
+                "type": "buzzwords",
+                "text": "VueJS, ColdFusion, C#"
+            }
+        ]
+    },
+    {
+        "title": "Web/Sys. Developer",
         "company": "Alfresco",
         "location": "Chicago, IL",
         "date": "Sep '20 - Oct '20",
