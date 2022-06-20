@@ -1,12 +1,12 @@
 [
     {
         "current": true,
-        "title": "Software Dev",
+        "title": "Software Engineer",
         "company": "MoreSteam",
         "location": "Powell, OH",
         "date": "Dec '20 - Present",
         "description": [
-            "Creating APIs in C#"
+            "Creating APIs in C# and beautiful UIs in Vue"
         ],
         "image": "moresteam-white.png",
         "backgroundColor": "#06204B",
@@ -15,11 +15,21 @@
         "detailed": [
             {
                 "type": "text",
-                "text": "MoreSteam creates online courses for Lean Six Sigma training. I just started, so not a whole lot to say about my experience yet."
+                "text": "MoreSteam creates online courses for Lean Six Sigma training, as well as software for admin users, project management, and statistical graphing. During my time at MoreSteam, I have contributed to revamping outdated UIs using VueJS, building a new reporting engine from scratch using ColdFusion, and introducing a new and improved Gantt chart using VueJS and .NET to MoreSteam's collection of graphing software. I have also had the opportunity to serve as the lead on multiple projects, including the aforementioned reporting engine rework as well as a project that integrates MoreSteam's graphing software into its project management software. This has given me the opportunity to estimate project work and write and assign project tickets."
+            },
+            {
+                "type": "link",
+                "text": "Gantt Stop 'Til You Get Enough (sorry)",
+                "url": "https://www.moresteam.com/university/tutorials/noint-tutorialplayer.cfm?msvd_title=Gantt%20Chart&msvd_poster=ER-snip-opening.png&msvd_filepath=Gantt&msvd_ratio=0"
+            },
+            {
+                "type": "link",
+                "text": "Check out the TRACtion Report Wizard",
+                "url": "https://www.moresteam.com/traction/updates.cfm"
             },
             {
                 "type": "buzzwords",
-                "text": "VueJS, ColdFusion, C#"
+                "text": "VueJS, C#, ColdFusion"
             }
         ]
     },
