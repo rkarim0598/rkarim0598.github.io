@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "deploy": "react-scripts build; netlify deploy --dir=build; netlify deploy --dir=build --prod",
+    "deploy": "react-app-rewired build; netlify deploy --dir=build; netlify deploy --dir=build --prod",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
